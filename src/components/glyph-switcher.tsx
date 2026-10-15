@@ -10,7 +10,9 @@ gsap.registerPlugin(useGSAP);
 
 const order: GlyphStyle[] = ["original", "xbox", "nintendo"];
 
-export function GlyphSwitcher() {
+type Labels = { switcher: string; styles: Record<GlyphStyle, { label: string; aria: string }> };
+
+export function GlyphSwitcher({ labels }: { labels: Labels }) {
   const [style, setStyle] = useState<GlyphStyle>("nintendo");
   const pad = useRef<HTMLDivElement>(null);
   const g = glyphStyles[style];
@@ -37,14 +39,14 @@ export function GlyphSwitcher() {
   return (
     <div className="flex flex-col gap-5">
       <Tabs value={style} onValueChange={(v) => setStyle(v as GlyphStyle)}>
-        <TabsList aria-label="Estilo dos ícones" className="h-11! rounded-md border border-line-strong bg-transparent p-0">
+        <TabsList aria-label={labels.switcher} className="h-11! rounded-md border border-line-strong bg-transparent p-0">
           {order.map((k) => (
             <TabsTrigger
               key={k}
               value={k}
               className="h-full! rounded-none px-[18px] text-xs font-extrabold tracking-[0.06em] uppercase [font-stretch:125%] data-active:bg-foreground! data-active:text-background!"
             >
-              {glyphStyles[k].label}
+              {labels.styles[k].label}
             </TabsTrigger>
           ))}
         </TabsList>
@@ -52,7 +54,7 @@ export function GlyphSwitcher() {
       <div
         ref={pad}
         role="img"
-        aria-label={g.aria}
+        aria-label={labels.styles[style].aria}
         className="grid w-fit grid-cols-[repeat(3,66px)] grid-rows-[repeat(3,66px)] gap-1.5 [perspective:600px] sm:grid-cols-[repeat(3,88px)] sm:grid-rows-[repeat(3,88px)]"
       >
         {button(g.top, "col-start-2 row-start-1")}

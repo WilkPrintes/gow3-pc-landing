@@ -34,23 +34,65 @@ npm run dev
 
 Abra http://localhost:3000. Outros comandos: `npm run build`, `npm run start` e `npm run lint`.
 
+## Idiomas
+
+O site existe em português, inglês e espanhol, em `/pt`, `/en` e `/es`. As seis páginas (landing e guias em cada idioma) são pré-renderizadas no build.
+
+- `src/proxy.ts` manda quem acessa `/` para o idioma salvo pelo seletor (cookie `NEXT_LOCALE`) ou, sem ele, para o idioma do navegador (`Accept-Language`). Qualquer outro idioma cai em português.
+- `src/i18n/dictionaries/pt.ts` é a fonte; `en.ts` e `es.ts` são tipados com o mesmo formato, então uma chave faltando quebra o `tsc`.
+- Os componentes de servidor chamam `getI18n()`, que lê o idioma com `next/root-params`. Não é preciso passar `lang` como prop.
+- Números, datas e tamanhos são formatados por idioma em `src/lib/format.ts`.
+
+Para adicionar um idioma: inclua o código em `src/i18n/config.ts`, crie o dicionário tipado com `Dictionary` e registre-o em `src/i18n/get-dictionary.ts`.
+
+## Composição
+
+A página é montada com componentes compostos, cada um exportado como objeto com suas partes:
+
+| Componente | Partes |
+| --- | --- |
+| `Section` | `Root`, `Header`, `Tape`, `Lead`, `Body` |
+| `Hero` | `Root`, `Copy`, `Eyebrow`, `Title`, `Lede`, `Actions`, `Meta`, `Note`, `Aside` |
+| `Header` | `Root`, `Brand`, `Nav`, `Actions`, `Chip` |
+| `MobileMenu` | `Root`, `Links`, `Footer`, `Close` |
+| `PlatformCard` | `Root`, `Flag`, `Title`, `Specs`, `Actions`, `Checksum` |
+| `FeatureBlock` | `Root`, `Media`, `Content`, `Eyebrow`, `Title`, `Text` |
+| `Shot` | `Root`, `Image`, `Hud`, `Caption` |
+| `Tutorial` | `Root`, `Header`, `Note`, `Log`, `Table`, `Steps`, `Checklist` |
+
+```tsx
+<Section.Root id="download">
+  <Section.Header word={t.downloads.word} index={1} total={5}>
+    <Section.Tape>{t.downloads.tape}</Section.Tape>
+    <Section.Lead>{t.downloads.lead}</Section.Lead>
+  </Section.Header>
+  <Section.Body>…</Section.Body>
+</Section.Root>
+```
+
+As seções da landing ficam em `src/components/sections/` e só combinam essas partes com os textos do dicionário.
+
 ## Estrutura
 
 ```
 src/
-  app/
+  app/[lang]/
+    layout.tsx            <html lang>, fontes, metadados e hreflang por idioma
     page.tsx              landing: hero, download, desempenho, recursos, compatibilidade, créditos
-    tutoriais/page.tsx    guias a partir das linhas do last_run.log
-  components/             seções da página; motion.tsx concentra todas as animações GSAP
-  content/                textos e dados estáticos (GPUs, recursos, tutoriais, amostras de FPS)
+    tutorials/page.tsx    guias a partir das linhas do last_run.log
+  components/             componentes compostos e partes interativas (cliente)
+  components/sections/    seções da landing montadas com os componentes compostos
+  content/site.ts         dados que não mudam com o idioma (links, amostras de FPS, ícones)
+  i18n/                   idiomas, dicionários e getI18n()
   lib/release.ts          dados da release mais recente, com cache de 1 hora
+  proxy.ts                redireciona / para o idioma certo
 public/media/             vídeo do topo (WebM AV1 e MP4 H.264) e imagem de capa
 src/assets/shots/         capturas do port
 ```
 
 ## Animações
 
-Os componentes de servidor só marcam elementos com `data-gsap="…"`. O componente cliente `Motion` encontra essas marcas e anima. Com `prefers-reduced-motion`, nenhuma animação roda e a página fica exatamente como foi renderizada.
+Os componentes de servidor só marcam elementos com `data-gsap="…"`. A página fica dentro de `<Motion>`, um componente cliente que procura essas marcas apenas na própria árvore e as anima. A busca é limitada de propósito: ao trocar de idioma, o Next 16 mantém a página anterior montada e oculta. Com `prefers-reduced-motion`, nenhuma animação roda e a página fica exatamente como foi renderizada.
 
 | Marca | O que faz |
 | --- | --- |

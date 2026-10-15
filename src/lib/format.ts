@@ -1,16 +1,17 @@
-const nf = new Intl.NumberFormat("pt-BR");
-const nf1 = new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+// Locale-aware formatting. `tag` is the BCP 47 tag from i18n/config (pt-BR, en, es).
 
-export const formatInt = (n: number) => nf.format(n);
+const one = { minimumFractionDigits: 1, maximumFractionDigits: 1 } as const;
 
-/** Binary megabytes, as the release page sizes are measured: 74184767 → "70,7 MiB" */
-export const formatMiB = (bytes: number) => `${nf1.format(bytes / 1024 / 1024)} MiB`;
+export const formatInt = (tag: string, n: number) => new Intl.NumberFormat(tag).format(n);
 
-/** 2246 → "2,2 mil" */
-export const formatStars = (n: number) => (n >= 1000 ? `${nf1.format(n / 1000)} mil` : nf.format(n));
+/** Binary megabytes, as the release page sizes are measured: 74184767 → "70,7 MiB" / "70.7 MiB" */
+export const formatMiB = (tag: string, bytes: number) => `${new Intl.NumberFormat(tag, one).format(bytes / 1024 / 1024)} MiB`;
 
-const dayMonth = new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: "short", timeZone: "UTC" });
-const fullDate = new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: "short", year: "numeric", timeZone: "UTC" });
+/** 2246 → "2,2 mil" (pt), "2.2K" (en), "2,2 mil" (es) */
+export const formatStars = (tag: string, n: number) => new Intl.NumberFormat(tag, { notation: "compact", ...one }).format(n);
 
-export const formatDay = (iso: string) => dayMonth.format(new Date(iso)).replace(".", "");
-export const formatDate = (iso: string) => fullDate.format(new Date(iso)).replace(".", "");
+export const formatDate = (tag: string, iso: string) =>
+  new Intl.DateTimeFormat(tag, { day: "2-digit", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(iso)).replace(".", "");
+
+export const formatDay = (tag: string, time: number | string) =>
+  new Intl.DateTimeFormat(tag, { day: "2-digit", month: "short", timeZone: "UTC" }).format(new Date(time)).replace(".", "");

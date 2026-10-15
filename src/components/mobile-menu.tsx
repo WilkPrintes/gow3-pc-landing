@@ -1,77 +1,74 @@
-"use client";
-
 import Link from "next/link";
+import type { ReactElement, ReactNode } from "react";
 import { MenuIcon } from "lucide-react";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { buttonVariants } from "@/components/ui/button";
-import { DownloadIcon, GithubIcon } from "@/components/icons";
-import { cn } from "@/lib/utils";
+import type { HeaderLink } from "@/components/header";
 
-export type NavLink = { href: string; label: string };
+/**
+ * Slide-in menu for phones, composed from the shadcn Sheet:
+ *
+ *   <MobileMenu.Root openLabel="…" title="…" subtitle="…">
+ *     <MobileMenu.Links label="…" links={…} current="…" />
+ *     <MobileMenu.Footer>
+ *       …
+ *       <MobileMenu.Close render={<Link href="…" />}>…</MobileMenu.Close>
+ *     </MobileMenu.Footer>
+ *   </MobileMenu.Root>
+ */
 
-export function MobileMenu({
-  links,
-  current,
-  version,
-  notesUrl,
-  repoUrl,
-  stars,
-}: {
-  links: NavLink[];
-  current?: string;
-  version: string;
-  notesUrl: string;
-  repoUrl: string;
-  stars: string;
-}) {
+function Root({ openLabel, title, subtitle, children }: { openLabel: string; title: string; subtitle: string; children: ReactNode }) {
   return (
     <Sheet>
       <SheetTrigger
-        aria-label="Abrir menu"
+        aria-label={openLabel}
         className="flex size-10 items-center justify-center rounded-md border border-line-strong text-foreground hover:border-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring lg:hidden"
       >
         <MenuIcon className="size-5" />
       </SheetTrigger>
       <SheetContent side="right" className="w-[86%] max-w-sm gap-0 border-l-line-strong bg-background p-0">
         <div className="border-b px-6 pt-6 pb-5">
-          <SheetTitle className="text-sm font-extrabold tracking-wide uppercase [font-stretch:125%]">God of War III · PC</SheetTitle>
-          <SheetDescription className="mt-1 font-mono text-xs text-steel">Port nativo · gow3_pc</SheetDescription>
+          <SheetTitle className="text-sm font-extrabold tracking-wide uppercase [font-stretch:125%]">{title}</SheetTitle>
+          <SheetDescription className="mt-1 font-mono text-xs text-steel">{subtitle}</SheetDescription>
         </div>
-        <nav aria-label="Seções" className="flex flex-col px-3 py-4">
-          {links.map((l) => (
-            <SheetClose
-              key={l.href}
-              nativeButton={false}
-              render={
-                <Link
-                  href={l.href}
-                  aria-current={current === l.href ? "page" : undefined}
-                  className="flex h-12 items-center rounded-md px-3 text-[17px] font-bold uppercase [font-stretch:112%] hover:bg-card aria-[current=page]:text-gold-hi"
-                />
-              }
-            >
-              {l.label}
-            </SheetClose>
-          ))}
-        </nav>
-        <div className="mt-auto flex flex-col gap-3 border-t px-6 py-6">
-          <a href={notesUrl} className="flex items-center gap-2 font-mono text-xs text-soft">
-            <i className="size-[7px] rounded-full bg-ok" />
-            Versão {version} · notas da versão
-          </a>
-          <a href={repoUrl} className="flex items-center gap-2 font-mono text-xs text-soft">
-            <GithubIcon className="size-4" />
-            FelipePrado0/gow3_pc · ★ {stars}
-          </a>
-          <SheetClose
-            nativeButton={false}
-            render={<Link href="/#download" className={cn(buttonVariants({ size: "cta" }), "mt-2 w-full")} />}
-          >
-            <DownloadIcon />
-            Baixar v{version}
-          </SheetClose>
-        </div>
+        {children}
       </SheetContent>
     </Sheet>
   );
 }
+
+function Links({ label, links, current }: { label: string; links: HeaderLink[]; current?: string }) {
+  return (
+    <nav aria-label={label} className="flex flex-col px-3 py-4">
+      {links.map((l) => (
+        <SheetClose
+          key={l.href}
+          nativeButton={false}
+          render={
+            <Link
+              href={l.href}
+              aria-current={current === l.href ? "page" : undefined}
+              className="flex h-12 items-center rounded-md px-3 text-[17px] font-bold uppercase [font-stretch:112%] hover:bg-card aria-[current=page]:text-gold-hi"
+            />
+          }
+        >
+          {l.label}
+        </SheetClose>
+      ))}
+    </nav>
+  );
+}
+
+function Footer({ children }: { children: ReactNode }) {
+  return <div className="mt-auto flex flex-col gap-3 border-t px-6 py-6">{children}</div>;
+}
+
+/** Closes the sheet when activated; pass the element to render (usually a Link). */
+function Close({ render, children }: { render: ReactElement; children: ReactNode }) {
+  return (
+    <SheetClose nativeButton={false} render={render}>
+      {children}
+    </SheetClose>
+  );
+}
+
+export const MobileMenu = { Root, Links, Footer, Close };
