@@ -1,0 +1,132 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  Game palette: storm graphite and ash greys of Olympus, Kratos crimson for
+  actions, bronze-gold of the logo and the Blades for detail.
+  The site is dark only, so the shadcn tokens hold the dark values on :root.
+*/
+:root {
+  color-scheme: dark;
+  --background: #0e1114;
+  --foreground: #ece8e1;
+  --card: #1a1f25;
+  --card-foreground: #ece8e1;
+  --popover: #1a1f25;
+  --popover-foreground: #ece8e1;
+  --primary: #b3141b;
+  --primary-hover: #cf1f27;
+  --primary-foreground: #fff4ec;
+  --secondary: #232a32;
+  --secondary-foreground: #ece8e1;
+  --muted: #232a32;
+  --muted-foreground: #8e99a4;
+  --accent: #232a32;
+  --accent-foreground: #ece8e1;
+  --destructive: #ff7a6b;
+  --border: #2c343d;
+  --input: #4a5562;
+  --ring: #e0bd6e;
+  --radius: 0.375rem;
+
+  --gold: #c9a052;
+  --gold-hi: #e0bd6e;
+  --steel: #8e99a4;
+  --soft: #c7ccd1;
+  --line-strong: #4a5562;
+  --deep: #0a0c0e;
+  --ok: #7fcf98;
+  --warn: #f2b45a;
+  --bad: #ff7a6b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-hi: var(--gold-hi);
+  --color-steel: var(--steel);
+  --color-soft: var(--soft);
+  --color-line-strong: var(--line-strong);
+  --color-deep: var(--deep);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-bad: var(--bad);
+
+  --font-sans: var(--font-archivo);
+  --font-heading: var(--font-archivo);
+  --font-mono: var(--font-jetbrains);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+/* Archivo Expanded, uppercase: section words and headings (Forza-like) */
+@utility display-x {
+  font-family: var(--font-archivo);
+  font-stretch: 125%;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+/* Small uppercase caption */
+@utility caption {
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 600;
+  font-stretch: 112%;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--steel);
+}
+
+/* Section header backdrop: faint 64px grid (RE Requiem) */
+@utility grid-backdrop {
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: -1px -1px;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
