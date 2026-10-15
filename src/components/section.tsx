@@ -26,7 +26,7 @@ function Header({ word, index, total, children }: { word: string; index: number;
   return (
     <div className="relative grid-backdrop" data-gsap="section">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-background/85 to-background" />
-      <div className="relative mx-auto flex w-full max-w-[1360px] flex-col gap-4 px-4 pt-20 pb-10 sm:px-8 lg:px-14">
+      <div className="relative mx-auto flex w-full max-w-[1360px] flex-col gap-4 px-4 pt-14 pb-8 sm:px-8 sm:pt-20 sm:pb-10 lg:px-14">
         <div className="relative flex items-end justify-between gap-4 pb-4">
           <h2 className="display-x text-[clamp(26px,3.2vw,48px)]" data-gsap="section-word">
             {word}
@@ -54,7 +54,7 @@ function Tape({ children }: { children: ReactNode }) {
 }
 
 function Lead({ children }: { children: ReactNode }) {
-  return <div className="max-w-[640px] text-[17px] text-soft">{children}</div>;
+  return <div className="max-w-[640px] text-base text-pretty text-soft sm:text-[17px]">{children}</div>;
 }
 
 function Body({ className, children }: { className?: string; children: ReactNode }) {

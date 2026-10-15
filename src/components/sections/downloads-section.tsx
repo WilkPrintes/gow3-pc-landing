@@ -1,10 +1,16 @@
 import { buttonVariants } from "@/components/ui/button";
+import { DownloadIcon } from "@/components/icons";
+import { LinuxIcon, WindowsIcon } from "@/components/brand-icons";
 import { PlatformCard } from "@/components/platform-card";
 import { ReleaseTimeline } from "@/components/release-timeline";
 import { Section } from "@/components/section";
 import { getI18n } from "@/i18n/get-dictionary";
 import { formatMiB } from "@/lib/format";
 import type { ReleaseData } from "@/lib/release";
+import { cn } from "@/lib/utils";
+
+/** Full width on phones, natural width from sm up */
+const action = "max-sm:w-full";
 
 export async function DownloadsSection({ release, index, total }: { release: ReleaseData; index: number; total: number }) {
   const { tag, t } = await getI18n();
@@ -23,7 +29,7 @@ export async function DownloadsSection({ release, index, total }: { release: Rel
           {windows && (
             <PlatformCard.Root featured>
               <PlatformCard.Flag>{d.recommended}</PlatformCard.Flag>
-              <PlatformCard.Title>Windows</PlatformCard.Title>
+              <PlatformCard.Title icon={<WindowsIcon />}>Windows</PlatformCard.Title>
               <PlatformCard.Specs
                 rows={[
                   [d.labels.file, `${windows.name} · ${formatMiB(tag, windows.bytes)}`],
@@ -33,10 +39,11 @@ export async function DownloadsSection({ release, index, total }: { release: Rel
                 ]}
               />
               <PlatformCard.Actions>
-                <a href={windows.url} className={buttonVariants({ size: "cta" })}>
+                <a href={windows.url} className={cn(buttonVariants({ size: "cta" }), action)}>
+                  <DownloadIcon />
                   {d.zip}
                 </a>
-                <a href={release.notesUrl} className={buttonVariants({ size: "cta", variant: "outline" })}>
+                <a href={release.notesUrl} className={cn(buttonVariants({ size: "cta", variant: "outline" }), action)}>
                   {t.common.releaseNotes}
                 </a>
               </PlatformCard.Actions>
@@ -46,7 +53,7 @@ export async function DownloadsSection({ release, index, total }: { release: Rel
           {linux && (
             <PlatformCard.Root>
               <PlatformCard.Flag muted>{d.experimental}</PlatformCard.Flag>
-              <PlatformCard.Title>Linux</PlatformCard.Title>
+              <PlatformCard.Title icon={<LinuxIcon />}>Linux</PlatformCard.Title>
               <PlatformCard.Specs
                 rows={[
                   [d.labels.file, `${linux.name} · ${formatMiB(tag, linux.bytes)}`],
@@ -56,7 +63,8 @@ export async function DownloadsSection({ release, index, total }: { release: Rel
                 ]}
               />
               <PlatformCard.Actions>
-                <a href={linux.url} className={buttonVariants({ size: "cta", variant: "outline" })}>
+                <a href={linux.url} className={cn(buttonVariants({ size: "cta", variant: "outline" }), action)}>
+                  <DownloadIcon />
                   {d.appimage}
                 </a>
               </PlatformCard.Actions>

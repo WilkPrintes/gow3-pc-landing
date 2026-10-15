@@ -43,7 +43,7 @@ function Title({ children }: { children: ReactNode }) {
 }
 
 function Text({ muted, children }: { muted?: boolean; children: ReactNode }) {
-  return <p className={cn(muted ? "text-sm text-steel" : "text-[16.5px] text-soft")}>{children}</p>;
+  return <p className={cn("text-pretty", muted ? "text-sm text-steel" : "text-base text-soft sm:text-[16.5px]")}>{children}</p>;
 }
 
 export const FeatureBlock = { Root, Media, Content, Eyebrow, Title, Text };

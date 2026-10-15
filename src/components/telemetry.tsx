@@ -23,11 +23,10 @@ export async function Telemetry() {
       data-gsap="tele"
     >
       <div className="flex items-center justify-between gap-3">
-        <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.16em] text-soft uppercase [font-stretch:112%]">
-          <i className="size-[7px] rounded-full bg-ok shadow-[0_0_0_3px_rgb(127_207_152/0.2)]" />
+        <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.16em] text-soft uppercase [font-stretch:112%] sm:text-[11px]">
           {t.telemetry.label}
         </span>
-        <span className="font-mono text-[11px] text-steel">{t.telemetry.rig}</span>
+        <span className="font-mono text-xs text-steel sm:text-[11px]">{t.telemetry.rig}</span>
       </div>
       <div className="flex items-baseline gap-2.5">
         <b className="text-[44px] leading-none font-extrabold tabular-nums [font-stretch:125%]" data-gsap="fps">
@@ -40,7 +39,7 @@ export async function Telemetry() {
         <polyline points={`0,${H} ${points} ${W},${H}`} fill="rgb(201 160 82 / 0.16)" stroke="none" />
         <polyline points={points} fill="none" stroke="var(--gold-hi)" strokeWidth="1.6" strokeLinejoin="round" data-gsap="draw" />
       </svg>
-      <div className="flex justify-between font-mono text-[11px] text-steel">
+      <div className="flex justify-between gap-3 font-mono text-xs text-steel sm:text-[11px]">
         <span>{fill(t.telemetry.place, { seconds: n })}</span>
         <span>{fill(t.telemetry.share, { share })}</span>
       </div>

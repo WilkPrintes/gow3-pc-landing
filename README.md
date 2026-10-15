@@ -60,6 +60,8 @@ A página é montada com componentes compostos, cada um exportado como objeto co
 | `Shot` | `Root`, `Image`, `Hud`, `Caption` |
 | `Tutorial` | `Root`, `Header`, `Note`, `Log`, `Table`, `Steps`, `Checklist` |
 
+Os logos de Windows, Linux e dos fabricantes de GPU ficam em `src/components/brand-icons.tsx`: os de NVIDIA, AMD, Intel, Linux e Steam Deck vêm do pacote [simple-icons](https://simpleicons.org) (CC0); o do Windows, que não existe no pacote, é desenhado no próprio arquivo.
+
 ```tsx
 <Section.Root id="download">
   <Section.Header word={t.downloads.word} index={1} total={5}>

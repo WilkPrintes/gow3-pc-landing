@@ -35,7 +35,7 @@ function Root({ videoLabel, children }: { videoLabel: string; children: ReactNod
         <source src="/media/hero.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-[linear-gradient(0deg,rgb(14_17_20/0.96)_0%,rgb(14_17_20/0.8)_55%,rgb(14_17_20/0.35)_100%)] lg:bg-[linear-gradient(90deg,rgb(14_17_20/0.94)_0%,rgb(14_17_20/0.78)_32%,rgb(14_17_20/0.15)_62%,transparent_100%),linear-gradient(0deg,rgb(14_17_20/0.85)_0%,transparent_26%)]" />
-      <div className="relative mx-auto grid w-full max-w-[1360px] grid-cols-[minmax(0,1fr)] items-end gap-8 px-4 pt-[120px] pb-10 sm:px-8 lg:min-h-[820px] lg:grid-cols-[minmax(0,560px)_minmax(0,1fr)] lg:px-14 lg:pt-[136px] lg:pb-14">
+      <div className="relative mx-auto grid w-full max-w-[1360px] grid-cols-[minmax(0,1fr)] items-end gap-8 px-4 pt-[100px] pb-8 sm:px-8 sm:pt-[120px] sm:pb-10 lg:min-h-[820px] lg:grid-cols-[minmax(0,560px)_minmax(0,1fr)] lg:px-14 lg:pt-[136px] lg:pb-14">
         {children}
       </div>
     </div>
@@ -64,7 +64,7 @@ function Title({ subtitle, children }: { subtitle?: ReactNode; children: ReactNo
 }
 
 function Lede({ children }: { children: ReactNode }) {
-  return <p className="max-w-[470px] text-lg leading-relaxed text-soft">{children}</p>;
+  return <p className="max-w-[470px] text-base leading-relaxed text-pretty text-soft sm:text-lg">{children}</p>;
 }
 
 function Actions({ children }: { children: ReactNode }) {

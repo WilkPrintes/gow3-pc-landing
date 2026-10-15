@@ -4,7 +4,7 @@ import { DownloadIcon, GithubIcon } from "@/components/icons";
 import { Header, type HeaderLink } from "@/components/header";
 import { MobileMenu } from "@/components/mobile-menu";
 import { LanguageSwitcher } from "@/components/language-switcher";
-import { PORT_REPO_URL } from "@/content/site";
+import { PAGE_REPO_URL, PORT_REPO_URL } from "@/content/site";
 import { fill } from "@/i18n/config";
 import { getI18n } from "@/i18n/get-dictionary";
 import { formatStars } from "@/lib/format";
@@ -32,7 +32,7 @@ export async function SiteHeader({ release, page }: { release: ReleaseData; page
       <Header.Actions>
         <LanguageSwitcher current={locale} label={t.header.language} className="hidden sm:flex" />
         <Header.Chip href={release.notesUrl} title={t.header.notesTitle} className="hidden xl:flex">
-          <i className="size-[7px] rounded-full bg-ok shadow-[0_0_0_3px_rgb(127_207_152/0.18)]" />v{release.version}
+          v{release.version}
         </Header.Chip>
         <Header.Chip href={PORT_REPO_URL} label={fill(t.header.repoAria, { stars })} className="hidden md:flex">
           <GithubIcon className="size-4" />★ {stars}
@@ -47,12 +47,15 @@ export async function SiteHeader({ release, page }: { release: ReleaseData; page
           <MobileMenu.Footer>
             <LanguageSwitcher current={locale} label={t.header.language} className="self-start" />
             <a href={release.notesUrl} className="flex items-center gap-2 font-mono text-xs text-soft">
-              <i className="size-[7px] rounded-full bg-ok" />
               {fill(t.header.menuVersion, { version: release.version })}
             </a>
             <a href={PORT_REPO_URL} className="flex items-center gap-2 font-mono text-xs text-soft">
               <GithubIcon className="size-4" />
               FelipePrado0/gow3_pc · ★ {stars}
+            </a>
+            <a href={PAGE_REPO_URL} className="flex items-center gap-2 font-mono text-xs text-soft">
+              <GithubIcon className="size-4" />
+              {t.footer.links.pageRepo}
             </a>
             <MobileMenu.Close render={<Link href={`${home}#download`} className={cn(buttonVariants({ size: "cta" }), "mt-2 w-full")} />}>
               <DownloadIcon />

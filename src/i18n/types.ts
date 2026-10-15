@@ -15,6 +15,8 @@ export type TutorialContent = {
   checklist?: string[];
 };
 
-export type GpuRow = { name: string; status: Tone; label: string; detail: string; issues?: string };
+export type Vendor = "amd" | "nvidia" | "intel" | "steamdeck";
+
+export type GpuRow = { vendor: Vendor; name: string; status: Tone; label: string; detail: string; issues?: string };
 
 export type ShotCopy = { alt: string; caption?: string; meta?: string };

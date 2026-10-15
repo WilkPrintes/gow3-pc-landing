@@ -18,8 +18,8 @@ function Root({ featured, children }: { featured?: boolean; children: ReactNode 
   return (
     <article
       className={cn(
-        "flex flex-col gap-[22px] rounded-md border bg-card p-6 sm:p-8",
-        featured && "border-gold/50 shadow-[inset_0_3px_0_var(--primary)]",
+        "flex flex-col gap-5 rounded-md border bg-card p-5 sm:gap-[22px] sm:p-8",
+        featured && "border-gold/50",
       )}
     >
       {children}
@@ -40,8 +40,13 @@ function Flag({ muted, children }: { muted?: boolean; children: ReactNode }) {
   );
 }
 
-function Title({ children }: { children: ReactNode }) {
-  return <h3 className="display-x text-[clamp(22px,2vw,30px)]">{children}</h3>;
+function Title({ icon, children }: { icon?: ReactNode; children: ReactNode }) {
+  return (
+    <h3 className="display-x flex items-center gap-3 text-[clamp(22px,2vw,30px)]">
+      {icon && <span className="flex size-[1em] shrink-0 items-center text-steel [&>svg]:size-full">{icon}</span>}
+      {children}
+    </h3>
+  );
 }
 
 function Specs({ rows }: { rows: [string, ReactNode][] }) {
