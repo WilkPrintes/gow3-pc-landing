@@ -60,9 +60,14 @@ export function Motion() {
       const marquee = one("marquee");
       if (marquee) gsap.to(marquee, { xPercent: -50, duration: 38, ease: "none", repeat: -1 });
 
+      // Play each entrance once, but keep the trigger alive. `once: true` kills a trigger
+      // during the refresh of another one when the page loads already scrolled past it
+      // (hash links, reloads), and ScrollTrigger then reads a missing entry ("reading 'end'").
+      const playOnce = (trigger: Element | null, start: string) => ({ trigger, start, toggleActions: "play none none none" });
+
       // Section headers (RE Requiem style): hairline draws, word rises, tape wipes in
       all("section").forEach((sec) => {
-        const tl = gsap.timeline({ scrollTrigger: { trigger: sec, start: "top 80%", once: true } });
+        const tl = gsap.timeline({ scrollTrigger: playOnce(sec, "top 80%") });
         const line = sec.querySelector('[data-gsap="hairline"]');
         const word = sec.querySelector('[data-gsap="section-word"]');
         const tape = sec.querySelector('[data-gsap="tape"]');
@@ -72,12 +77,12 @@ export function Motion() {
       });
 
       // Content blocks fade up as they enter
-      const reveals = all("reveal");
-      gsap.set(reveals, { y: 40, autoAlpha: 0 });
-      ScrollTrigger.batch(reveals, {
-        start: "top 88%",
-        once: true,
-        onEnter: (batch) => gsap.to(batch, { y: 0, autoAlpha: 1, duration: 0.8, stagger: 0.1, ease: "power3.out" }),
+      all("reveal").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { y: 40, autoAlpha: 0 },
+          { y: 0, autoAlpha: 1, duration: 0.8, ease: "power3.out", scrollTrigger: playOnce(el, "top 88%") },
+        );
       });
 
       // Release timeline ticks and benchmark bars grow in
@@ -89,11 +94,11 @@ export function Motion() {
           duration: 0.5,
           stagger: 0.06,
           ease: "back.out(2)",
-          scrollTrigger: { trigger: one("timeline"), start: "top 85%", once: true },
+          scrollTrigger: playOnce(one("timeline"), "top 85%"),
         });
       }
       all("bar").forEach((bar) => {
-        gsap.from(bar, { scaleX: 0, duration: 1, ease: "power3.out", scrollTrigger: { trigger: bar, start: "top 90%", once: true } });
+        gsap.from(bar, { scaleX: 0, duration: 1, ease: "power3.out", scrollTrigger: playOnce(bar, "top 90%") });
       });
 
       // Floating download button shows up once the hero download buttons are out of view
