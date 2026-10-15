@@ -136,11 +136,23 @@ const pt = {
       title: "Os botões do seu controle no jogo",
       text: "QTEs, tutoriais e a lista de golpes mostram ícones de Xbox ou Nintendo, em qualquer idioma. DualSense, Xbox e teclado funcionam juntos, com remapeamento.",
       note: "Launcher → Jogo → Controles → Ícones no jogo. Os ícones são gerados em cópias de dois arquivos, cerca de 70 MB, fora da pasta do jogo.",
-      shot: {
-        alt: "Menu Fortalecer das Lâminas do Exílio com os comandos B, X, Y e A no estilo Nintendo",
-        caption: "Menu Fortalecer com ícones Nintendo",
-        meta: "B · X · Y · A",
-      } satisfies ShotCopy,
+      shots: {
+        original: {
+          alt: "Menu Fortalecer das Lâminas do Exílio com os comandos triângulo, quadrado e círculo do PlayStation",
+          caption: "Menu Fortalecer · ícones originais",
+          meta: "△ Alma · □ Exibir · ○ Voltar",
+        },
+        xbox: {
+          alt: "Menu Fortalecer das Lâminas do Exílio com os comandos Y, X e B no estilo Xbox",
+          caption: "Menu Fortalecer · estilo Xbox",
+          meta: "Y Alma · X Exibir · B Voltar",
+        },
+        nintendo: {
+          alt: "Menu Fortalecer da Lâmina de Atena com os comandos X, Y e A no estilo Nintendo",
+          caption: "Menu Fortalecer · estilo Nintendo",
+          meta: "X Alma · Y Exibir · A Voltar",
+        },
+      } satisfies Record<"original" | "xbox" | "nintendo", ShotCopy>,
       switcherAria: "Estilo dos ícones",
       styles: {
         original: { label: "Original", aria: "Ícones originais do PlayStation" },

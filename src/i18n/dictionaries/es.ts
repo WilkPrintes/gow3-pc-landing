@@ -135,10 +135,22 @@ const es: Dictionary = {
       title: "Los botones de tu mando en el juego",
       text: "Los QTE, los tutoriales y la lista de movimientos muestran iconos de Xbox o Nintendo, en cualquier idioma. DualSense, mandos de Xbox y teclado funcionan a la vez, con reasignación.",
       note: "Launcher → Juego → Controles → Iconos en el juego. Los iconos se generan en copias de dos archivos del juego, unos 70 MB, fuera de la carpeta del juego.",
-      shot: {
-        alt: "Menú de mejora de las Espadas del Exilio con los botones B, X, Y y A al estilo Nintendo",
-        caption: "Menú de mejora con iconos de Nintendo",
-        meta: "B · X · Y · A",
+      shots: {
+        original: {
+          alt: "Menú de mejora de las Espadas del Exilio con los botones triángulo, cuadrado y círculo de PlayStation",
+          caption: "Menú de mejora · iconos originales",
+          meta: "△ Alma · □ Ver · ○ Volver",
+        },
+        xbox: {
+          alt: "Menú de mejora de las Espadas del Exilio con los botones Y, X y B al estilo Xbox",
+          caption: "Menú de mejora · estilo Xbox",
+          meta: "Y Alma · X Ver · B Volver",
+        },
+        nintendo: {
+          alt: "Menú de mejora de las Espadas de Atenea con los botones X, Y y A al estilo Nintendo",
+          caption: "Menú de mejora · estilo Nintendo",
+          meta: "X Alma · Y Ver · A Volver",
+        },
       },
       switcherAria: "Estilo de los iconos",
       styles: {

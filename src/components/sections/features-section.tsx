@@ -1,9 +1,8 @@
 import { FeatureBlock } from "@/components/feature-block";
-import { GlyphSwitcher } from "@/components/glyph-switcher";
+import { GlyphShowcase } from "@/components/glyph-showcase";
 import { Section } from "@/components/section";
 import { Shot } from "@/components/shot";
 import { getI18n } from "@/i18n/get-dictionary";
-import glyphs from "@/assets/shots/nintendo-glyphs.webp";
 import portMenuShot from "@/assets/shots/port-menu.webp";
 import cutscene from "@/assets/shots/cutscene.webp";
 import launcher from "@/assets/shots/launcher.png";
@@ -22,22 +21,22 @@ export async function FeaturesSection({ index, total }: { index: number; total: 
         <Section.Tape>{f.tape}</Section.Tape>
       </Section.Header>
       <Section.Body>
-        <FeatureBlock.Root>
-          <FeatureBlock.Media>
-            <Shot.Root>
-              <Shot.Image src={glyphs} alt={f.controller.shot.alt} />
-              <Shot.Hud>120 FPS · 8,3 ms · Native</Shot.Hud>
-              <Shot.Caption meta={f.controller.shot.meta}>{f.controller.shot.caption}</Shot.Caption>
-            </Shot.Root>
-          </FeatureBlock.Media>
-          <FeatureBlock.Content>
-            <FeatureBlock.Eyebrow>{f.controller.eyebrow}</FeatureBlock.Eyebrow>
-            <FeatureBlock.Title>{f.controller.title}</FeatureBlock.Title>
-            <FeatureBlock.Text>{f.controller.text}</FeatureBlock.Text>
-            <GlyphSwitcher labels={{ switcher: f.controller.switcherAria, styles: f.controller.styles }} />
-            <FeatureBlock.Text muted>{f.controller.note}</FeatureBlock.Text>
-          </FeatureBlock.Content>
-        </FeatureBlock.Root>
+        {/* The tabs, the face buttons and the screenshot share one selected icon style */}
+        <GlyphShowcase.Provider>
+          <FeatureBlock.Root>
+            <FeatureBlock.Media>
+              <GlyphShowcase.Shot copy={f.controller.shots} />
+            </FeatureBlock.Media>
+            <FeatureBlock.Content>
+              <FeatureBlock.Eyebrow>{f.controller.eyebrow}</FeatureBlock.Eyebrow>
+              <FeatureBlock.Title>{f.controller.title}</FeatureBlock.Title>
+              <FeatureBlock.Text>{f.controller.text}</FeatureBlock.Text>
+              <GlyphShowcase.Tabs label={f.controller.switcherAria} styles={f.controller.styles} />
+              <GlyphShowcase.Pad styles={f.controller.styles} />
+              <FeatureBlock.Text muted>{f.controller.note}</FeatureBlock.Text>
+            </FeatureBlock.Content>
+          </FeatureBlock.Root>
+        </GlyphShowcase.Provider>
 
         <FeatureBlock.Root flip>
           <FeatureBlock.Media>

@@ -129,10 +129,22 @@ const en: Dictionary = {
       title: "Your controller's buttons in the game",
       text: "QTEs, tutorials and the move list show Xbox or Nintendo icons, in every language. DualSense, Xbox controllers and keyboard work together, with remapping.",
       note: "Launcher → Game → Controls → In-game button icons. The icons are drawn on copies of two game files, about 70 MB, outside the game folder.",
-      shot: {
-        alt: "Upgrade menu for the Blades of Exile with the B, X, Y and A prompts in Nintendo style",
-        caption: "Upgrade menu with Nintendo icons",
-        meta: "B · X · Y · A",
+      shots: {
+        original: {
+          alt: "Upgrade menu for the Blades of Exile with the PlayStation triangle, square and circle prompts",
+          caption: "Upgrade menu · original icons",
+          meta: "△ Soul · □ View · ○ Back",
+        },
+        xbox: {
+          alt: "Upgrade menu for the Blades of Exile with the Y, X and B prompts in Xbox style",
+          caption: "Upgrade menu · Xbox style",
+          meta: "Y Soul · X View · B Back",
+        },
+        nintendo: {
+          alt: "Upgrade menu for the Blades of Athena with the X, Y and A prompts in Nintendo style",
+          caption: "Upgrade menu · Nintendo style",
+          meta: "X Soul · Y View · A Back",
+        },
       },
       switcherAria: "Icon style",
       styles: {
