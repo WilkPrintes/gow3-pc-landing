@@ -95,6 +95,8 @@ const es: Dictionary = {
       label: "Ritmo de actualización",
       summary: "{count} versiones en {hours} horas",
       aria: "Últimas {count} versiones del port",
+      stable: "estable",
+      tests: "{count} builds de prueba",
     },
   },
 

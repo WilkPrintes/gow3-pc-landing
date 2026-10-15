@@ -96,6 +96,8 @@ const pt = {
       label: "Ritmo de atualização",
       summary: "{count} versões em {hours} horas",
       aria: "Últimas {count} releases do port",
+      stable: "estável",
+      tests: "{count} builds de teste",
     },
   },
 

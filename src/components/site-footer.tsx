@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import logo from "@/assets/logo.png";
 import { AUTHOR_URL, KOFI_URL, PAGE_REPO_URL, PORT_AUTHOR_URL, PORT_REPO_URL } from "@/content/site";
@@ -16,7 +17,7 @@ function Credit({ title, children }: { title: string; children: ReactNode }) {
 }
 
 export async function SiteFooter() {
-  const { t } = await getI18n();
+  const { locale, t } = await getI18n();
   const f = t.footer;
 
   return (
@@ -50,7 +51,10 @@ export async function SiteFooter() {
           <Image src={logo} alt="" width={28} height={28} className="rounded-md" />
           <p className="max-w-[640px] text-[12.5px] text-steel">{f.disclaimer}</p>
         </div>
-        <nav className="flex gap-5" aria-label={f.linksAria}>
+        <nav className="flex flex-wrap gap-5" aria-label={f.linksAria}>
+          <Link className="caption hover:text-foreground" href={`/${locale}/tutorials`}>
+            {t.header.nav.tutorials}
+          </Link>
           <a className="caption hover:text-foreground" href={PORT_REPO_URL}>
             {f.links.repo}
           </a>

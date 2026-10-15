@@ -94,6 +94,8 @@ const en: Dictionary = {
       label: "Release pace",
       summary: "{count} releases in {hours} hours",
       aria: "Latest {count} releases of the port",
+      stable: "stable",
+      tests: "{count} test builds",
     },
   },
 

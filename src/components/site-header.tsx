@@ -15,22 +15,20 @@ import { cn } from "@/lib/utils";
 export async function SiteHeader({ release, page }: { release: ReleaseData; page: "home" | "tutorials" }) {
   const { locale, tag, t } = await getI18n();
   const home = `/${locale}`;
-  const tutorials = `/${locale}/tutorials`;
   const stars = formatStars(tag, release.stars);
 
+  // The guides page is linked from the footer, not from the header
   const links: HeaderLink[] = [
     { href: `${home}#download`, label: t.header.nav.download },
     { href: `${home}#performance`, label: t.header.nav.performance },
     { href: `${home}#features`, label: t.header.nav.features },
     { href: `${home}#compatibility`, label: t.header.nav.compatibility },
-    { href: tutorials, label: t.header.nav.tutorials },
   ];
-  const current = page === "tutorials" ? tutorials : undefined;
 
   return (
     <Header.Root solid={page !== "home"}>
       <Header.Brand href={home} label={t.header.homeAria} tagline={t.header.tagline} />
-      <Header.Nav label={t.header.sectionsAria} links={links} current={current} />
+      <Header.Nav label={t.header.sectionsAria} links={links} />
       <Header.Actions>
         <LanguageSwitcher current={locale} label={t.header.language} className="hidden sm:flex" />
         <Header.Chip href={release.notesUrl} title={t.header.notesTitle} className="hidden xl:flex">
@@ -45,7 +43,7 @@ export async function SiteHeader({ release, page }: { release: ReleaseData; page
         </Link>
 
         <MobileMenu.Root openLabel={t.header.openMenu} title="God of War III · PC" subtitle={t.header.menuSubtitle}>
-          <MobileMenu.Links label={t.header.sectionsAria} links={links} current={current} />
+          <MobileMenu.Links label={t.header.sectionsAria} links={links} />
           <MobileMenu.Footer>
             <LanguageSwitcher current={locale} label={t.header.language} className="self-start" />
             <a href={release.notesUrl} className="flex items-center gap-2 font-mono text-xs text-soft">

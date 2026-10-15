@@ -25,14 +25,9 @@ export const fpsSamples = [
   120, 120,
 ];
 
-/** Face buttons by position, for each icon style the port can draw */
-export const glyphStyles = {
-  original: { top: "△", right: "○", bottom: "✕", left: "□" },
-  xbox: { top: "Y", right: "B", bottom: "A", left: "X" },
-  nintendo: { top: "X", right: "A", bottom: "B", left: "Y" },
-} as const;
-
-export type GlyphStyle = keyof typeof glyphStyles;
+/** Icon styles the port can draw for QTEs and prompts (the glyphs themselves live in glyph-switcher.tsx) */
+export const glyphStyleIds = ["original", "xbox", "nintendo"] as const;
+export type GlyphStyle = (typeof glyphStyleIds)[number];
 
 /** Credit links; the descriptions come from the dictionary under the same keys */
 export const creditLinks = [

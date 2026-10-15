@@ -27,16 +27,13 @@ export async function PerformanceSection({ index, total }: { index: number; tota
       <Section.Header word={p.word} index={index} total={total}>
         <Section.Tape>{p.tape}</Section.Tape>
         <Section.Lead>{p.lead}</Section.Lead>
-      </Section.Header>
-
-      <Section.Body className="-mt-4 mb-10">
-        <p className="inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-md border border-line-strong bg-card px-4 py-2.5 text-sm text-soft">
+        <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1.5 self-start rounded-md border border-line-strong bg-card px-4 py-3 text-sm leading-snug text-soft">
           <span className="caption text-gold-hi">{p.recordedOn}</span>
           <span>
             <b className="font-semibold text-foreground">GeForce RTX 3060</b> · {p.rig}
           </span>
         </p>
-      </Section.Body>
+      </Section.Header>
 
       <Section.Body className="flex flex-col gap-10">
         <div className="grid grid-cols-2 border-y border-t-line-strong lg:grid-cols-4" data-gsap="reveal">
