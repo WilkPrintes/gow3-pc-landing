@@ -17,7 +17,7 @@ function Kbd({ children }: { children: string }) {
 
 function Block({ flip, media, children }: { flip?: boolean; media: React.ReactNode; children: React.ReactNode }) {
   return (
-    <div className="grid items-center gap-10 border-t py-14 first:border-t-0 first:pt-0 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:gap-14" data-gsap="reveal">
+    <div className="grid grid-cols-[minmax(0,1fr)] items-center gap-10 border-t py-14 first:border-t-0 first:pt-0 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:gap-14" data-gsap="reveal">
       <div className={flip ? "lg:order-2" : undefined}>{media}</div>
       <div className="flex flex-col gap-5">{children}</div>
     </div>
@@ -29,7 +29,7 @@ const lead = "text-[16.5px] text-soft";
 
 export function Features({ index, total }: { index: number; total: number }) {
   return (
-    <section id="recursos" className="scroll-mt-16">
+    <section id="recursos" className="scroll-mt-20">
       <SectionHeader word="Recursos" index={index} total={total} tape="O que o port já faz hoje" />
       <div className="mx-auto w-full max-w-[1360px] px-4 sm:px-8 lg:px-14">
         <Block
@@ -77,7 +77,7 @@ export function Features({ index, total }: { index: number; total: number }) {
           <p className={lead}>Cutscenes em H.264, música, vozes e efeitos em ATRAC9 e MP3. As legendas e menus aparecem no idioma do seu dump.</p>
         </Block>
 
-        <div className="grid gap-4 border-t pt-14 sm:grid-cols-2 lg:grid-cols-4" data-gsap="reveal">
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-4 border-t pt-14 sm:grid-cols-2 lg:grid-cols-4" data-gsap="reveal">
           {moreFeatures.map((f) => (
             <div key={f.title} className="flex flex-col gap-2.5 rounded-md border bg-card p-6">
               <h4 className="m-0 text-[17px] leading-tight font-extrabold uppercase [font-stretch:125%]">{f.title}</h4>

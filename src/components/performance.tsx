@@ -19,10 +19,18 @@ const bench = [
 
 export function Performance({ index, total }: { index: number; total: number }) {
   return (
-    <section id="desempenho" className="scroll-mt-16">
+    <section id="desempenho" className="scroll-mt-20">
       <SectionHeader word="Desempenho" index={index} total={total} tape="120 FPS por padrão. 240 se você quiser.">
         O código do jogo roda direto na CPU, sem emulação. Os números abaixo são do overlay do próprio port, em resolução nativa.
       </SectionHeader>
+      <div className="mx-auto -mt-4 mb-10 w-full max-w-[1360px] px-4 sm:px-8 lg:px-14">
+        <p className="inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-md border border-line-strong bg-card px-4 py-2.5 text-sm text-soft">
+          <span className="caption text-gold-hi">Gravado em</span>
+          <span>
+            <b className="font-semibold text-foreground">GeForce RTX 3060</b> · 1080p nativo · motor a 120 FPS · NVIDIA App
+          </span>
+        </p>
+      </div>
       <div className="mx-auto flex w-full max-w-[1360px] flex-col gap-10 px-4 sm:px-8 lg:px-14">
         <div className="grid grid-cols-2 border-y border-t-line-strong lg:grid-cols-4" data-gsap="reveal">
           {stats.map((s, i) => (
@@ -44,7 +52,7 @@ export function Performance({ index, total }: { index: number; total: number }) 
           ))}
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2" data-gsap="reveal">
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-4 md:grid-cols-2" data-gsap="reveal">
           <Shot
             className="md:col-span-2"
             src={tartarus}
@@ -58,7 +66,7 @@ export function Performance({ index, total }: { index: number; total: number }) 
           <Shot src={cestus} alt="Kratos com o Cestus de Nemeia entre pilares de gelo" hud="120 FPS · 8,3 ms" caption="Gameplay" meta="Native" />
         </div>
 
-        <div className="grid items-start gap-x-14 gap-y-6 md:grid-cols-2">
+        <div className="grid grid-cols-[minmax(0,1fr)] items-start gap-x-14 gap-y-6 md:grid-cols-2">
           <div className="flex flex-col gap-3.5">
             <span className="caption">Referência · 1080p · motor a 240</span>
             {bench.map((b) => (

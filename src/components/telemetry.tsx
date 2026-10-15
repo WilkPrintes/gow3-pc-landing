@@ -25,7 +25,7 @@ export function Telemetry() {
           <i className="size-[7px] rounded-full bg-ok shadow-[0_0_0_3px_rgb(127_207_152/0.2)]" />
           Overlay do port
         </span>
-        <span className="font-mono text-[11px] text-steel">Native · 1080p</span>
+        <span className="font-mono text-[11px] text-steel">RTX 3060 · 1080p</span>
       </div>
       <div className="flex items-baseline gap-2.5">
         <b className="text-[44px] leading-none font-extrabold tabular-nums [font-stretch:125%]" data-gsap="fps">
@@ -38,7 +38,7 @@ export function Telemetry() {
         preserveAspectRatio="none"
         className="block h-16 w-full"
         role="img"
-        aria-label={`FPS por segundo em ${n} segundos de gameplay na Caverna do Tártaro: ${share}% do tempo a 120, mínimo de ${min}`}
+        aria-label={`FPS por segundo em ${n} segundos de gameplay na Caverna do Tártaro, gravado numa RTX 3060: ${share}% do tempo a 120, mínimo de ${min}`}
       >
         <line x1="0" y1={TOP} x2={W} y2={TOP} stroke="var(--line-strong)" strokeWidth="1" strokeDasharray="3 4" />
         <polyline points={`0,${H} ${points} ${W},${H}`} fill="rgb(201 160 82 / 0.16)" stroke="none" />

@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 function Spec({ rows }: { rows: [string, string][] }) {
   return (
-    <dl className="m-0 grid grid-cols-1 gap-x-[18px] gap-y-2.5 text-[15px] sm:grid-cols-[120px_minmax(0,1fr)]">
+    <dl className="m-0 grid grid-cols-[minmax(0,1fr)] gap-x-[18px] gap-y-2.5 text-[15px] sm:grid-cols-[120px_minmax(0,1fr)]">
       {rows.map(([k, v]) => (
         <div key={k} className="contents">
           <dt className="text-[11.5px] leading-[1.8] font-semibold tracking-[0.16em] text-steel uppercase">{k}</dt>
@@ -54,7 +54,7 @@ function Timeline({ recent }: { recent: ReleaseData["recent"] }) {
   const day = new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: "short", timeZone: "UTC" });
 
   return (
-    <div className="grid items-center gap-x-14 gap-y-6 lg:grid-cols-[280px_minmax(0,1fr)]">
+    <div className="grid grid-cols-[minmax(0,1fr)] items-center gap-x-14 gap-y-6 lg:grid-cols-[280px_minmax(0,1fr)]">
       <div className="flex flex-col gap-2">
         <span className="caption">Ritmo de atualização</span>
         <p className="text-[19px] leading-tight font-bold uppercase [font-stretch:125%]">
@@ -87,12 +87,12 @@ function Timeline({ recent }: { recent: ReleaseData["recent"] }) {
 export function Downloads({ release, index, total }: { release: ReleaseData; index: number; total: number }) {
   const { windows, linux } = release;
   return (
-    <section id="download" className="scroll-mt-16">
+    <section id="download" className="scroll-mt-20">
       <SectionHeader word="Download" index={index} total={total} tape="Sempre a versão mais recente, direto do GitHub">
         Escolha a plataforma. O launcher também se atualiza sozinho em Avançado → Verificar atualizações, mantendo saves e ajustes.
       </SectionHeader>
       <div className="mx-auto flex w-full max-w-[1360px] flex-col gap-10 px-4 sm:px-8 lg:px-14">
-        <div className="grid gap-4 lg:grid-cols-2" data-gsap="reveal">
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-4 lg:grid-cols-2" data-gsap="reveal">
           {windows && (
             <article className="flex flex-col gap-[22px] rounded-md border border-gold/50 bg-card p-6 shadow-[inset_0_3px_0_var(--primary)] sm:p-8">
               <Flag>Recomendado</Flag>

@@ -18,7 +18,7 @@ export default async function Home() {
 
   return (
     <>
-      <SiteHeader stars={release.stars} />
+      <SiteHeader release={release} />
       <main>
         <Hero release={release} />
         <Downloads release={release} index={1} total={SECTIONS} />

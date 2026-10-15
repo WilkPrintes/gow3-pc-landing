@@ -66,7 +66,7 @@ Os componentes de servidor só marcam elementos com `data-gsap="…"`. O compone
 
 ## Vídeo do topo
 
-Loop de 18 s em 1080p a 60 FPS, montado só com trechos em que o overlay do port marcava 120 FPS, a partir de gravações do NVIDIA App. Dois arquivos: `hero.webm` (AV1, 5,8 MB) e `hero.mp4` (H.264, 7,9 MB) como alternativa.
+Loop de 18 s em 1080p a 60 FPS, montado só com trechos em que o overlay do port marcava 120 FPS, a partir de gravações do NVIDIA App numa GeForce RTX 3060. Dois arquivos: `hero.webm` (AV1, 5,8 MB) e `hero.mp4` (H.264, 7,9 MB) como alternativa.
 
 ## Mídia
 

@@ -10,7 +10,7 @@ const tone: Record<GpuStatus, string> = {
 
 export function Compatibility({ index, total }: { index: number; total: number }) {
   return (
-    <section id="compatibilidade" className="scroll-mt-16">
+    <section id="compatibilidade" className="scroll-mt-20">
       <SectionHeader word="Compatível?" index={index} total={total} tape="Veja sua placa antes de baixar">
         Tirado das notas da {NOTES_VERSION}. Se a sua placa tem um problema conhecido, acompanhe a issue em vez de abrir outra.
       </SectionHeader>

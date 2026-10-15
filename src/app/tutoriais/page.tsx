@@ -15,8 +15,8 @@ export default async function TutorialsPage() {
 
   return (
     <>
-      <SiteHeader stars={release.stars} current="/tutoriais" />
-      <main>
+      <SiteHeader release={release} current="/tutoriais" />
+      <main className="pt-[73px]">
         <section className="border-b bg-deep">
           <div className="mx-auto flex w-full max-w-[1360px] flex-col gap-3 px-4 py-12 sm:px-8 lg:px-14">
             <span className="caption text-gold-hi">Tutoriais</span>

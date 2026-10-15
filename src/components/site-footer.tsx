@@ -4,8 +4,35 @@ import { PORT_REPO_URL } from "@/content/site";
 
 export function SiteFooter() {
   const link = "caption hover:text-foreground";
+  const name = "font-semibold text-foreground underline decoration-line-strong underline-offset-4 hover:decoration-gold-hi";
   return (
     <footer className="border-t bg-deep pt-9 pb-28">
+      <div className="mx-auto mb-8 grid w-full max-w-[1360px] grid-cols-[minmax(0,1fr)] gap-4 border-b px-4 pb-8 sm:grid-cols-2 sm:px-8 lg:px-14">
+        <p className="text-sm text-soft">
+          <span className="caption mb-2 block text-gold-hi">O port</span>
+          O gow3_pc é um projeto de{" "}
+          <a className={name} href="https://github.com/FelipePrado0">
+            Felipe Prado
+          </a>
+          , que cria e mantém o port. Downloads, issues e código ficam no{" "}
+          <a className={name} href={PORT_REPO_URL}>
+            repositório oficial
+          </a>
+          .
+        </p>
+        <p className="text-sm text-soft">
+          <span className="caption mb-2 block text-gold-hi">Esta página</span>
+          Página feita por{" "}
+          <a className={name} href="https://github.com/WilkPrintes">
+            Wilk Printes
+          </a>
+          . O código está aberto em{" "}
+          <a className={name} href="https://github.com/WilkPrintes/gow3-pc-landing">
+            WilkPrintes/gow3-pc-landing
+          </a>
+          .
+        </p>
+      </div>
       <div className="mx-auto flex w-full max-w-[1360px] flex-wrap items-center justify-between gap-6 px-4 sm:px-8 lg:px-14">
         <div className="flex items-center gap-3.5">
           <Image src={logo} alt="" width={28} height={28} className="rounded-md" />

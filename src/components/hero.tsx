@@ -10,7 +10,7 @@ export function Hero({ release }: { release: ReleaseData }) {
   return (
     <section id="topo">
       <div className="relative overflow-hidden border-b bg-black">
-        {/* 18 s loop, 1080p60, cut only from stretches where the port's overlay read 120 FPS */}
+        {/* 18 s loop, 1080p60, recorded on an RTX 3060 and cut only from stretches where the port's overlay read 120 FPS */}
         <video
           className="absolute inset-0 size-full object-cover"
           poster="/media/hero-poster.jpg"
@@ -19,7 +19,7 @@ export function Hero({ release }: { release: ReleaseData }) {
           loop
           playsInline
           preload="auto"
-          aria-label="Gameplay de God of War III no port a 120 FPS: Caverna do Tártaro, a câmara giratória de Dédalo, as Lâminas em combate e um QTE com ícone Nintendo"
+          aria-label="Gameplay de God of War III no port a 120 FPS, gravado numa RTX 3060: Caverna do Tártaro, a câmara giratória de Dédalo, as Lâminas em combate e um QTE com ícone Nintendo"
           data-gsap="hero-video"
         >
           <source src="/media/hero.webm" type="video/webm" />
@@ -27,7 +27,7 @@ export function Hero({ release }: { release: ReleaseData }) {
         </video>
         <div className="absolute inset-0 bg-[linear-gradient(0deg,rgb(14_17_20/0.96)_0%,rgb(14_17_20/0.8)_55%,rgb(14_17_20/0.35)_100%)] lg:bg-[linear-gradient(90deg,rgb(14_17_20/0.94)_0%,rgb(14_17_20/0.78)_32%,rgb(14_17_20/0.15)_62%,transparent_100%),linear-gradient(0deg,rgb(14_17_20/0.85)_0%,transparent_26%)]" />
 
-        <div className="relative mx-auto grid w-full max-w-[1360px] items-end gap-8 px-4 pt-14 pb-10 sm:px-8 lg:min-h-[780px] lg:grid-cols-[minmax(0,560px)_minmax(0,1fr)] lg:px-14 lg:pt-[72px] lg:pb-14">
+        <div className="relative mx-auto grid w-full max-w-[1360px] grid-cols-[minmax(0,1fr)] items-end gap-8 px-4 pt-[120px] pb-10 sm:px-8 lg:min-h-[820px] lg:grid-cols-[minmax(0,560px)_minmax(0,1fr)] lg:px-14 lg:pt-[136px] lg:pb-14">
           <div className="flex flex-col gap-[22px] self-center" data-gsap="hero-copy">
             <span className="caption text-gold-hi">Port nativo do PS4 · Windows e Linux</span>
             <h1 className="display-x text-[clamp(32px,3.6vw,54px)]" data-gsap="split">
