@@ -85,10 +85,10 @@
   --radius-xl: calc(var(--radius) * 1.4);
 }
 
-/* Titles: Cinzel capitals */
+/* Titles: Cinzel 700. Only 700 and 900 are loaded, so heavier classes resolve to 900 */
 @utility display-x {
   font-family: var(--font-cinzel);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   line-height: 1.05;

@@ -15,11 +15,12 @@ const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
 });
 
-// Titles and main buttons: Cinzel (SIL OFL), Roman inscription capitals at 700 to 900.
-// No franchise font, and no Ω next to it: the page keeps its own mark (components/brand-mark.tsx).
+// Titles and main buttons: Cinzel (SIL OFL), Roman inscription capitals, like the
+// titles in the port launcher. No franchise font.
 const cinzel = Cinzel({
   variable: "--font-cinzel",
   subsets: ["latin"],
+  weight: ["700", "900"],
 });
 
 /** Prerender every supported language */
@@ -32,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: { default: t.meta.title, template: t.meta.titleTemplate },
     description: t.meta.description,
-    openGraph: { locale: tag.replace("-", "_") },
+    openGraph: { title: t.meta.title, description: t.meta.description, siteName: "gow3_pc", locale: tag.replace("-", "_") },
     alternates: {
       canonical: `/${locale}`,
       languages: Object.fromEntries(locales.map((l) => [htmlLang[l], `/${l}`])),

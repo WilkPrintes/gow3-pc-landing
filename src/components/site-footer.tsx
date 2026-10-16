@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { BrandMark } from "@/components/brand-mark";
+import Image from "next/image";
+import logo from "@/assets/logo.png";
 import { GithubIcon } from "@/components/icons";
 import { AUTHOR_URL, PAGE_REPO_URL, PORT_AUTHOR_URL, PORT_REPO_URL } from "@/content/site";
 import { getI18n } from "@/i18n/get-dictionary";
@@ -48,7 +49,7 @@ export async function SiteFooter() {
       </div>
       <div className="mx-auto flex w-full max-w-[1360px] flex-wrap items-center justify-between gap-6 px-4 sm:px-8 lg:px-14">
         <div className="flex items-center gap-3.5">
-          <BrandMark className="size-7 shrink-0" />
+          <Image src={logo} alt="" width={28} height={28} className="shrink-0 rounded-md" />
           <p className="max-w-[640px] text-[12.5px] text-steel">
             {f.notice}{" "}
             <Link className="text-soft underline decoration-line-strong underline-offset-4 hover:text-foreground hover:decoration-gold-hi" href={`/${locale}/legal`}>

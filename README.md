@@ -12,7 +12,7 @@ O objetivo da página é um só: o jogador baixar a versão mais recente com o m
 - [Tailwind CSS 4](https://tailwindcss.com) e componentes [shadcn/ui](https://ui.shadcn.com) sobre Base UI
 - [GSAP](https://gsap.com) com ScrollTrigger e SplitText para as animações
 - Fontes via `next/font`:
-  - **Cinzel** (SIL OFL, 700 a 900) nos títulos e botões principais. Nenhuma fonte da franquia, e a marca da página é própria (`src/components/brand-mark.tsx`), sem o Ω.
+  - **Cinzel** (SIL OFL, 700 a 900) nos títulos e botões principais. Nenhuma fonte da franquia. O logo é o do próprio projeto, `launcher/gow3.png` do repositório gow3_pc.
   - **Archivo** no texto corrido e **JetBrains Mono** nos dados técnicos.
 
 ## Dados sempre atualizados
