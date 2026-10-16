@@ -1,6 +1,6 @@
 import NextImage from "next/image";
 import type { ReactNode } from "react";
-import backdrop from "@/assets/shots/tartarus.webp";
+import backdrop from "@/assets/shots/chamber.webp";
 
 /**
  * Hero over a capture of the port running.
@@ -29,7 +29,7 @@ function Root({ children }: { children: ReactNode }) {
         priority
         sizes="100vw"
         placeholder="blur"
-        className="object-cover object-[70%_center]"
+        className="object-cover object-[62%_center]"
         data-gsap="hero-media"
       />
       <div className="absolute inset-0 bg-[linear-gradient(0deg,rgb(14_17_20/0.96)_0%,rgb(14_17_20/0.8)_55%,rgb(14_17_20/0.35)_100%)] lg:bg-[linear-gradient(90deg,rgb(14_17_20/0.94)_0%,rgb(14_17_20/0.78)_32%,rgb(14_17_20/0.15)_62%,transparent_100%),linear-gradient(0deg,rgb(14_17_20/0.85)_0%,transparent_26%)]" />

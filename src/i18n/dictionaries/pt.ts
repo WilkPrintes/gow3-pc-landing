@@ -123,7 +123,7 @@ const pt = {
       note: "RX 6700 XT, Ryzen 5 5600X e 32 GB. É um resultado de referência, não garantia para outras máquinas. Em notebooks com NVIDIA, Stream buffer memory em System RAM pode render mais FPS.",
     },
     shots: {
-      tartarus: { alt: "Kratos chegando à Caverna do Tártaro", caption: "Caverna do Tártaro" },
+      chamber: { alt: "Salão circular com uma escultura de metal iluminada em azul e um vitral ao fundo", caption: "Gameplay" },
       cestus: { alt: "Kratos com o Cestus de Nemeia entre pilares de gelo", caption: "Gameplay" },
     } satisfies Record<string, ShotCopy>,
   },

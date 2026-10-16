@@ -3,7 +3,7 @@ import { Shot } from "@/components/shot";
 import { VideoEmbed } from "@/components/video-embed";
 import { PERFORMANCE_VIDEO_ID, benchmark } from "@/content/site";
 import { getI18n } from "@/i18n/get-dictionary";
-import tartarus from "@/assets/shots/tartarus.webp";
+import chamber from "@/assets/shots/chamber.webp";
 import cestus from "@/assets/shots/cestus.webp";
 
 export async function PerformanceSection({ index, total }: { index: number; total: number }) {
@@ -64,9 +64,9 @@ export async function PerformanceSection({ index, total }: { index: number; tota
             <Shot.Caption meta="YouTube">{capture}</Shot.Caption>
           </Shot.Root>
           <Shot.Root>
-            <Shot.Image src={tartarus} alt={p.shots.tartarus.alt} />
-            <Shot.Hud>118 FPS · 8,5 ms · Native</Shot.Hud>
-            <Shot.Caption meta={p.shots.tartarus.caption}>{capture}</Shot.Caption>
+            <Shot.Image src={chamber} alt={p.shots.chamber.alt} />
+            <Shot.Hud>114 FPS · 8,7 ms · Native</Shot.Hud>
+            <Shot.Caption meta={p.shots.chamber.caption}>{capture}</Shot.Caption>
           </Shot.Root>
           <Shot.Root>
             <Shot.Image src={cestus} alt={p.shots.cestus.alt} />

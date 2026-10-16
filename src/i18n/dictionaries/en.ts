@@ -117,7 +117,7 @@ const en: Dictionary = {
       note: "RX 6700 XT, Ryzen 5 5600X and 32 GB. A reference result, not a guarantee for other machines. On NVIDIA laptops, putting Stream buffer memory in System RAM can give more FPS.",
     },
     shots: {
-      tartarus: { alt: "Kratos arriving in Tartarus", caption: "Tartarus" },
+      chamber: { alt: "A round hall with a blue-lit metal sculpture and a stained-glass window behind it", caption: "Gameplay" },
       cestus: { alt: "Kratos with the Nemean Cestus between ice pillars", caption: "Gameplay" },
     },
   },

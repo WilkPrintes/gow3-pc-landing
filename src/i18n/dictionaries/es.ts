@@ -122,7 +122,7 @@ const es: Dictionary = {
       note: "RX 6700 XT, Ryzen 5 5600X y 32 GB. Es un resultado de referencia, no una garantía para otras máquinas. En portátiles con NVIDIA, poner Stream buffer memory en System RAM puede dar más FPS.",
     },
     shots: {
-      tartarus: { alt: "Kratos llegando al Tártaro", caption: "Tártaro" },
+      chamber: { alt: "Salón circular con una escultura de metal iluminada en azul y una vidriera al fondo", caption: "Gameplay" },
       cestus: { alt: "Kratos con el Cesto de Nemea entre pilares de hielo", caption: "Gameplay" },
     },
   },
