@@ -113,6 +113,6 @@ Os componentes de servidor só marcam elementos com `data-gsap="…"`. A página
 
 ## Mídia
 
-Nenhum vídeo é hospedado aqui. O vídeo do port fica no YouTube e entra na seção Desempenho pelo `youtube-nocookie.com`: basta preencher `PERFORMANCE_VIDEO_ID` em `src/content/site.ts`. Sem o ID, a seção mostra um quadro reservado.
+Nenhum vídeo é hospedado aqui. O vídeo do port fica no YouTube e entra na seção Desempenho pelo `youtube-nocookie.com`: o ID fica em `PERFORMANCE_VIDEO_ID`, em `src/content/site.ts`. Sem o ID, a seção mostra um quadro reservado.
 
-As capturas (launcher, menu do port, ícones de controle e duas cenas de gameplay) foram feitas rodando o port com o próprio dump. Todas levam a legenda "Captura do port em funcionamento". O e-mail para pedidos de remoção fica em `LEGAL_EMAIL`, no mesmo arquivo.
+As capturas (launcher, menu do port, ícones de controle e cenas de gameplay) foram feitas rodando o port com o próprio dump. O topo da página alterna cinco delas em CSS puro (`hero-slide` em `globals.css`), todas de gameplay, sem cutscenes, com o overlay do port entre 114 e 120 FPS; com `prefers-reduced-motion`, fica só a primeira. Todas levam a legenda "Captura do port em funcionamento". O e-mail para pedidos de remoção fica em `LEGAL_EMAIL`, no mesmo arquivo.

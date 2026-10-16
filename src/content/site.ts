@@ -13,7 +13,7 @@ export const PORT_AUTHOR_URL = "https://github.com/FelipePrado0";
 export const LEGAL_EMAIL: string | null = null;
 
 /** YouTube ID of the port video for the Performance section, embedded from youtube-nocookie.com. Null shows a placeholder. */
-export const PERFORMANCE_VIDEO_ID: string | null = null;
+export const PERFORMANCE_VIDEO_ID: string | null = "xmRmtdBPKew";
 
 /** Release the compatibility list and the guides were checked against */
 export const NOTES_VERSION = "2.3.0";

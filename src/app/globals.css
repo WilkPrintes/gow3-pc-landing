@@ -116,6 +116,24 @@
   color: var(--steel);
 }
 
+/* Hero slideshow: five captures crossfading with a slow zoom (durations and delays set inline) */
+@keyframes hero-slide {
+  0% { opacity: 0; transform: scale(1.06); }
+  4% { opacity: 1; }
+  20% { opacity: 1; }
+  24% { opacity: 0; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-slide {
+    animation-name: hero-slide;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+}
+
 /* Section header backdrop: faint 64px grid (RE Requiem) */
 @utility grid-backdrop {
   background-image:
