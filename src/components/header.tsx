@@ -29,7 +29,7 @@ function Brand({ href, label, tagline }: { href: string; label: string; tagline:
     <Link href={href} className="group flex shrink-0 items-center gap-3" aria-label={label}>
       <Image src={logo} alt="" width={38} height={38} className="rounded-lg ring-1 ring-white/10" priority />
       <span className="flex flex-col gap-1 leading-none">
-        <span className="text-[15px] font-extrabold tracking-[0.02em] uppercase [font-stretch:125%]">God of War III</span>
+        <span className="font-wordmark text-base font-bold tracking-[0.05em] uppercase">God of War III</span>
         <span className="font-mono text-[11px] tracking-[0.08em] text-steel uppercase group-hover:text-gold-hi">{tagline}</span>
       </span>
     </Link>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, JetBrains_Mono } from "next/font/google";
+import { Archivo, Cinzel, JetBrains_Mono } from "next/font/google";
 import { htmlLang, locales } from "@/i18n/config";
 import { getI18n } from "@/i18n/get-dictionary";
 import "../globals.css";
@@ -12,6 +12,14 @@ const archivo = Archivo({
 
 const jetbrains = JetBrains_Mono({
   variable: "--font-jetbrains",
+  subsets: ["latin"],
+});
+
+// Trajan-style capitals (SIL OFL) for the "God of War III" wordmark only.
+// The launcher's own GodOfWar.ttf is a demo font marked "restricted embedding",
+// so it is not served on the web.
+const cinzel = Cinzel({
+  variable: "--font-cinzel",
   subsets: ["latin"],
 });
 
@@ -40,7 +48,7 @@ export const viewport: Viewport = {
 export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   const { tag } = await getI18n();
   return (
-    <html lang={tag} className={`${archivo.variable} ${jetbrains.variable} dark`}>
+    <html lang={tag} className={`${archivo.variable} ${jetbrains.variable} ${cinzel.variable} dark`}>
       <body className="min-h-dvh">{children}</body>
     </html>
   );

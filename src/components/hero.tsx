@@ -57,7 +57,8 @@ function Eyebrow({ children }: { children: ReactNode }) {
 function Title({ subtitle, children }: { subtitle?: ReactNode; children: ReactNode }) {
   return (
     <h1 className="display-x text-[clamp(32px,3.6vw,54px)]" data-gsap="split">
-      {children}
+      {/* The game's name in Trajan-style capitals; the subtitle stays in Archivo Expanded */}
+      <span className="block font-wordmark text-[1.08em] font-bold tracking-[0.03em] [font-stretch:100%]">{children}</span>
       {subtitle && <span className="mt-2.5 block text-[0.62em] font-bold tracking-[0.04em] text-steel">{subtitle}</span>}
     </h1>
   );

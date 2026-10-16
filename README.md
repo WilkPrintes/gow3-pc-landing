@@ -11,7 +11,7 @@ O objetivo da página é um só: o jogador baixar a versão mais recente com o m
 - [Next.js 16](https://nextjs.org) (App Router, Cache Components, Turbopack)
 - [Tailwind CSS 4](https://tailwindcss.com) e componentes [shadcn/ui](https://ui.shadcn.com) sobre Base UI
 - [GSAP](https://gsap.com) com ScrollTrigger e SplitText para as animações
-- Fontes Archivo (eixo de largura, para os títulos expandidos) e JetBrains Mono, via `next/font`
+- Fontes Archivo (eixo de largura, para os títulos expandidos), JetBrains Mono e Cinzel (só no nome "God of War III"), via `next/font`. A fonte do launcher (`gowfont.ttf`) não é usada: é uma fonte "Demo" de autor não identificado, marcada como incorporação restrita.
 
 ## Dados sempre atualizados
 

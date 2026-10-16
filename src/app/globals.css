@@ -76,6 +76,7 @@
   --font-sans: var(--font-archivo);
   --font-heading: var(--font-archivo);
   --font-mono: var(--font-jetbrains);
+  --font-wordmark: var(--font-cinzel);
 
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
