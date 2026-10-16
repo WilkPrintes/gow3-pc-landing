@@ -31,7 +31,7 @@ function Flag({ muted, children }: { muted?: boolean; children: ReactNode }) {
   return (
     <span
       className={cn(
-        "inline-flex h-[26px] items-center self-start rounded-sm px-2.5 text-[11px] font-bold tracking-[0.14em] uppercase font-display",
+        "inline-flex h-[26px] items-center self-start rounded-sm px-2.5 text-[11px] font-bold tracking-[0.14em] font-display",
         muted ? "bg-steel/15 text-soft" : "bg-gold/15 text-gold-hi",
       )}
     >

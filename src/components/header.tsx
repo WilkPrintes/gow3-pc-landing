@@ -45,7 +45,7 @@ function Nav({ label, links, current }: { label: string; links: HeaderLink[]; cu
           key={l.href}
           href={l.href}
           aria-current={current === l.href ? "page" : undefined}
-          className="relative px-3 py-2 font-display text-[13px] font-bold tracking-[0.06em] text-foreground/75 uppercase transition-colors after:absolute after:inset-x-3 after:-bottom-px after:h-0.5 after:origin-left after:scale-x-0 after:bg-gold-hi after:transition-transform after:duration-300 hover:text-foreground hover:after:scale-x-100 aria-[current=page]:text-foreground aria-[current=page]:after:scale-x-100"
+          className="relative px-3 py-2 font-display text-[13px] font-bold tracking-[0.06em] text-foreground/75 transition-colors after:absolute after:inset-x-3 after:-bottom-px after:h-0.5 after:origin-left after:scale-x-0 after:bg-gold-hi after:transition-transform after:duration-300 hover:text-foreground hover:after:scale-x-100 aria-[current=page]:text-foreground aria-[current=page]:after:scale-x-100"
         >
           {l.label}
         </Link>

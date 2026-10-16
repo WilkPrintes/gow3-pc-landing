@@ -40,7 +40,7 @@ export function GlyphShowcaseTabs({ label, styles }: { label: string; styles: St
           <TabsTrigger
             key={k}
             value={k}
-            className="h-full! rounded-none px-4 text-xs font-extrabold tracking-[0.06em] uppercase font-display data-active:bg-foreground! data-active:text-background! sm:px-[18px]"
+            className="h-full! rounded-none px-4 text-xs font-extrabold tracking-[0.06em] font-display data-active:bg-foreground! data-active:text-background! sm:px-[18px]"
           >
             {styles[k].label}
           </TabsTrigger>

@@ -76,7 +76,7 @@ function Eyebrow({ children }: { children: ReactNode }) {
 function Title({ subtitle, children }: { subtitle?: ReactNode; children: ReactNode }) {
   return (
     <div className="flex flex-col gap-3">
-      <h1 className="display-epic text-[clamp(40px,4.6vw,68px)]" data-gsap="split">
+      <h1 className="display-epic text-[clamp(40px,4.6vw,68px)] uppercase" data-gsap="split">
         {children}
       </h1>
       {subtitle && <p className="max-w-[500px] text-[17px] leading-snug font-semibold text-pretty text-foreground/90 sm:text-lg">{subtitle}</p>}

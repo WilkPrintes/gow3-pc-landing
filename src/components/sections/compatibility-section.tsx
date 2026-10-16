@@ -70,7 +70,7 @@ export async function CompatibilitySection({ index, total }: { index: number; to
                       <span className="text-[15px] leading-snug font-bold font-display sm:text-base">{g.name}</span>
                       <span
                         className={cn(
-                          "inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.12em] whitespace-nowrap uppercase font-display sm:text-[11.5px]",
+                          "inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.12em] whitespace-nowrap font-display sm:text-[11.5px]",
                           tone[g.status],
                         )}
                       >

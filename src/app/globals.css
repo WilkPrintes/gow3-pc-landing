@@ -90,7 +90,7 @@
   font-family: var(--font-cinzel);
   font-weight: 700;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
+  /* Cinzel draws lowercase as small caps: a full capital and small caps, like the game menus */
   line-height: 1.05;
   text-wrap: balance;
 }
@@ -100,19 +100,17 @@
   font-family: var(--font-cinzel);
   font-weight: 900;
   letter-spacing: 0.01em;
-  text-transform: uppercase;
   line-height: 1;
   text-wrap: balance;
 }
 
-/* Small uppercase caption */
+/* Small caption, in the same capital + small caps */
 @utility caption {
   font-family: var(--font-cinzel);
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1;
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.1em;
   color: var(--steel);
 }
 

@@ -65,7 +65,7 @@ export async function FeaturesSection({ index, total }: { index: number; total: 
         <div className="grid grid-cols-[minmax(0,1fr)] gap-4 border-t pt-14 sm:grid-cols-2 lg:grid-cols-4" data-gsap="reveal">
           {f.more.map((item) => (
             <div key={item.title} className="flex flex-col gap-2.5 rounded-md border bg-card p-6">
-              <h4 className="m-0 text-[17px] leading-tight font-extrabold uppercase font-display">{item.title}</h4>
+              <h4 className="m-0 text-[17px] leading-tight font-extrabold font-display">{item.title}</h4>
               <p className="text-[14.5px] text-steel">{item.text}</p>
             </div>
           ))}
