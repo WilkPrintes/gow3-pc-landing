@@ -28,7 +28,7 @@ function Header({ word, index, total, children }: { word: string; index: number;
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-background/85 to-background" />
       <div className="relative mx-auto flex w-full max-w-[1360px] flex-col gap-4 px-4 pt-14 pb-8 sm:px-8 sm:pt-20 sm:pb-10 lg:px-14">
         <div className="relative flex items-end justify-between gap-4 pb-4">
-          <h2 className="display-x text-[clamp(26px,3.2vw,48px)]" data-gsap="section-word">
+          <h2 className="display-epic text-[clamp(26px,3.2vw,48px)]" data-gsap="section-word">
             {word}
           </h2>
           <span className="pb-2 font-mono text-[13px] whitespace-nowrap text-steel">
@@ -45,7 +45,7 @@ function Header({ word, index, total, children }: { word: string; index: number;
 function Tape({ children }: { children: ReactNode }) {
   return (
     <span
-      className="self-start bg-foreground px-3 pt-1.5 pb-[7px] text-[clamp(15px,1.5vw,20px)] leading-tight font-bold text-background"
+      className="self-start bg-foreground px-3 pt-1.5 pb-[7px] font-display text-[clamp(15px,1.5vw,20px)] leading-tight font-bold text-background"
       data-gsap="tape"
     >
       {children}

@@ -29,7 +29,7 @@ function Brand({ href, label, tagline }: { href: string; label: string; tagline:
     <Link href={href} className="group flex shrink-0 items-center gap-3" aria-label={label}>
       <Image src={logo} alt="" width={38} height={38} className="rounded-lg ring-1 ring-white/10" priority />
       <span className="flex flex-col gap-1 leading-none">
-        <span className="font-wordmark text-base font-bold tracking-[0.05em] uppercase">God of War III</span>
+        <span className="font-wordmark text-base font-black tracking-[0.03em] uppercase">God of War III</span>
         <span className="font-mono text-[11px] tracking-[0.08em] text-steel uppercase group-hover:text-gold-hi">{tagline}</span>
       </span>
     </Link>
@@ -44,7 +44,7 @@ function Nav({ label, links, current }: { label: string; links: HeaderLink[]; cu
           key={l.href}
           href={l.href}
           aria-current={current === l.href ? "page" : undefined}
-          className="relative px-3 py-2 text-[13.5px] font-semibold text-foreground/75 transition-colors after:absolute after:inset-x-3 after:-bottom-px after:h-0.5 after:origin-left after:scale-x-0 after:bg-gold-hi after:transition-transform after:duration-300 hover:text-foreground hover:after:scale-x-100 aria-[current=page]:text-foreground aria-[current=page]:after:scale-x-100"
+          className="relative px-3 py-2 font-display text-[13px] font-bold tracking-[0.06em] text-foreground/75 uppercase transition-colors after:absolute after:inset-x-3 after:-bottom-px after:h-0.5 after:origin-left after:scale-x-0 after:bg-gold-hi after:transition-transform after:duration-300 hover:text-foreground hover:after:scale-x-100 aria-[current=page]:text-foreground aria-[current=page]:after:scale-x-100"
         >
           {l.label}
         </Link>

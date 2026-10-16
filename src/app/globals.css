@@ -73,10 +73,12 @@
   --color-warn: var(--warn);
   --color-bad: var(--bad);
 
+  /* Same split as the port launcher: a "God of War" face for titles, a sans for text */
   --font-sans: var(--font-archivo);
-  --font-heading: var(--font-archivo);
+  --font-heading: var(--font-cinzel);
+  --font-display: var(--font-cinzel);
+  --font-wordmark: var(--font-cinzel-decorative);
   --font-mono: var(--font-jetbrains);
-  --font-wordmark: var(--font-cinzel);
 
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
@@ -84,11 +86,21 @@
   --radius-xl: calc(var(--radius) * 1.4);
 }
 
-/* Archivo Expanded, uppercase: section words and headings (Forza-like) */
+/* Titles: Cinzel capitals, standing in for the launcher's GodOfWar face */
 @utility display-x {
-  font-family: var(--font-archivo);
-  font-stretch: 125%;
+  font-family: var(--font-cinzel);
   font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+/* The game name and the big section words: Cinzel Decorative black */
+@utility display-epic {
+  font-family: var(--font-cinzel-decorative);
+  font-weight: 900;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   line-height: 1;
   text-wrap: balance;
@@ -96,11 +108,11 @@
 
 /* Small uppercase caption */
 @utility caption {
+  font-family: var(--font-cinzel);
   font-size: 12px;
   line-height: 1;
-  font-weight: 600;
-  font-stretch: 112%;
-  letter-spacing: 0.18em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--steel);
 }

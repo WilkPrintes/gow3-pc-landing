@@ -43,7 +43,7 @@ export async function ReleaseTimeline({ recent }: { recent: ReleaseData["recent"
     <div className="grid grid-cols-[minmax(0,1fr)] items-center gap-x-14 gap-y-6 lg:grid-cols-[280px_minmax(0,1fr)]">
       <div className="flex flex-col gap-2">
         <span className="caption">{c.label}</span>
-        <p className="text-[19px] leading-tight font-bold uppercase [font-stretch:125%]">{fill(c.summary, { count: stable.length, hours })}</p>
+        <p className="text-[19px] leading-tight font-bold uppercase font-display">{fill(c.summary, { count: stable.length, hours })}</p>
       </div>
 
       <div className="min-w-0" data-gsap="timeline">

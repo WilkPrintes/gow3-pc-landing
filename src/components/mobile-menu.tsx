@@ -27,7 +27,7 @@ function Root({ openLabel, title, subtitle, children }: { openLabel: string; tit
       </SheetTrigger>
       <SheetContent side="right" className="w-[86%] max-w-sm gap-0 border-l-line-strong bg-background p-0">
         <div className="border-b px-6 pt-6 pb-5">
-          <SheetTitle className="text-sm font-extrabold tracking-wide uppercase [font-stretch:125%]">{title}</SheetTitle>
+          <SheetTitle className="text-sm font-extrabold tracking-wide uppercase font-display">{title}</SheetTitle>
           <SheetDescription className="mt-1 font-mono text-xs text-steel">{subtitle}</SheetDescription>
         </div>
         {children}
@@ -47,7 +47,7 @@ function Links({ label, links, current }: { label: string; links: HeaderLink[]; 
             <Link
               href={l.href}
               aria-current={current === l.href ? "page" : undefined}
-              className="flex h-12 items-center rounded-md px-3 text-[17px] font-bold uppercase [font-stretch:112%] hover:bg-card aria-[current=page]:text-gold-hi"
+              className="flex h-12 items-center rounded-md px-3 text-[17px] font-bold uppercase font-display hover:bg-card aria-[current=page]:text-gold-hi"
             />
           }
         >

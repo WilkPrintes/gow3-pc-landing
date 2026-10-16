@@ -67,10 +67,10 @@ export async function CompatibilitySection({ index, total }: { index: number; to
                       key={g.name}
                       className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-5 gap-y-1.5 border-b py-4 sm:py-[18px] lg:grid-cols-[minmax(0,1.1fr)_200px_minmax(0,1.6fr)_110px]"
                     >
-                      <span className="text-[15px] leading-snug font-bold [font-stretch:112%] sm:text-base">{g.name}</span>
+                      <span className="text-[15px] leading-snug font-bold font-display sm:text-base">{g.name}</span>
                       <span
                         className={cn(
-                          "inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.12em] whitespace-nowrap uppercase [font-stretch:112%] sm:text-[11.5px]",
+                          "inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.12em] whitespace-nowrap uppercase font-display sm:text-[11.5px]",
                           tone[g.status],
                         )}
                       >

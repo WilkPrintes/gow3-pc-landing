@@ -47,7 +47,7 @@ export async function PerformanceSection({ index, total }: { index: number; tota
                 (i === 2 ? "lg:border-l lg:pl-6" : "")
               }
             >
-              <b className="text-[clamp(28px,2.6vw,40px)] leading-none font-extrabold tabular-nums [font-stretch:125%]">
+              <b className="text-[clamp(28px,2.6vw,40px)] leading-none font-extrabold tabular-nums font-display">
                 {s.value}
                 <em className="text-gold not-italic">{s.unit}</em>
               </b>

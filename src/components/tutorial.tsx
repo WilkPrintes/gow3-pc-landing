@@ -103,7 +103,7 @@ function Steps({ steps }: { steps: { title: string; text: string }[] }) {
         <li key={s.title} className="grid grid-cols-[32px_minmax(0,1fr)] gap-3.5">
           <span className="flex size-7 items-center justify-center rounded-full border border-line-strong bg-muted font-mono text-xs">{i + 1}</span>
           <div>
-            <h3 className="mb-1.5 text-[17px] font-bold uppercase [font-stretch:112%]">{s.title}</h3>
+            <h3 className="mb-1.5 text-[17px] font-bold uppercase font-display">{s.title}</h3>
             <p className="text-steel">{s.text}</p>
           </div>
         </li>
@@ -115,7 +115,7 @@ function Steps({ steps }: { steps: { title: string; text: string }[] }) {
 function Checklist({ title, items, children }: { title: string; items: string[]; children?: ReactNode }) {
   return (
     <div className="flex flex-col gap-3">
-      <h3 className="text-[17px] font-bold uppercase [font-stretch:112%]">{title}</h3>
+      <h3 className="text-[17px] font-bold uppercase font-display">{title}</h3>
       <ul className="m-0 flex list-none flex-col gap-2 p-0">
         {items.map((c) => (
           <li key={c} className="flex gap-2.5 text-soft">

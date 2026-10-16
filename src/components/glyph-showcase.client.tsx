@@ -40,7 +40,7 @@ export function GlyphShowcaseTabs({ label, styles }: { label: string; styles: St
           <TabsTrigger
             key={k}
             value={k}
-            className="h-full! rounded-none px-4 text-xs font-extrabold tracking-[0.06em] uppercase [font-stretch:125%] data-active:bg-foreground! data-active:text-background! sm:px-[18px]"
+            className="h-full! rounded-none px-4 text-xs font-extrabold tracking-[0.06em] uppercase font-display data-active:bg-foreground! data-active:text-background! sm:px-[18px]"
           >
             {styles[k].label}
           </TabsTrigger>
@@ -69,7 +69,8 @@ const shapes: Record<Position, ReactNode> = {
   bottom: shape(<path d="m5 5 14 14M19 5 5 19" {...stroke} />),
   left: shape(<rect x="4.5" y="4.5" width="15" height="15" rx="1" {...stroke} />),
 };
-const letter = (l: string) => <span className="text-[0.95em] leading-none font-black [font-stretch:100%]">{l}</span>;
+// Controller letters stay in the sans face, like on the real buttons
+const letter = (l: string) => <span className="font-sans text-[0.95em] leading-none font-black">{l}</span>;
 
 const glyphs: Record<GlyphStyle, Record<Position, Glyph>> = {
   original: {

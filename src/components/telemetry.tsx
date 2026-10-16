@@ -23,13 +23,13 @@ export async function Telemetry() {
       data-gsap="tele"
     >
       <div className="flex items-center justify-between gap-3">
-        <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.16em] text-soft uppercase [font-stretch:112%] sm:text-[11px]">
+        <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.16em] text-soft uppercase font-display sm:text-[11px]">
           {t.telemetry.label}
         </span>
         <span className="font-mono text-xs text-steel sm:text-[11px]">{t.telemetry.rig}</span>
       </div>
       <div className="flex items-baseline gap-2.5">
-        <b className="text-[44px] leading-none font-extrabold tabular-nums [font-stretch:125%]" data-gsap="fps">
+        <b className="text-[44px] leading-none font-extrabold tabular-nums font-display" data-gsap="fps">
           120
         </b>
         <span className="font-mono text-[13px] text-soft">{t.telemetry.frame}</span>
