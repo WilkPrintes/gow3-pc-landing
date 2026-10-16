@@ -9,8 +9,8 @@ import { formatMiB } from "@/lib/format";
 import type { ReleaseData } from "@/lib/release";
 import { cn } from "@/lib/utils";
 
-/** Full width on phones, natural width from sm up */
-const action = "max-sm:w-full";
+/** Each button fills its column, so both cards show the same two button widths */
+const action = "w-full px-4";
 
 export async function DownloadsSection({ release, index, total }: { release: ReleaseData; index: number; total: number }) {
   const { tag, t } = await getI18n();
@@ -69,6 +69,9 @@ export async function DownloadsSection({ release, index, total }: { release: Rel
                 <a href={linux.url} className={cn(buttonVariants({ size: "cta", variant: "outline" }), action)}>
                   <DownloadIcon />
                   {d.appimage}
+                </a>
+                <a href={release.notesUrl} className={cn(buttonVariants({ size: "cta", variant: "outline" }), action)}>
+                  {t.common.releaseNotes}
                 </a>
               </PlatformCard.Actions>
               <PlatformCard.Checksum value={linux.sha256} labels={copyLabels} />
