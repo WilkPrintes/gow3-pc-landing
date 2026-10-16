@@ -8,7 +8,6 @@ export const PORT_REPO_URL = "https://github.com/FelipePrado0/gow3_pc";
 export const PAGE_REPO_URL = "https://github.com/WilkPrintes/gow3-pc-landing";
 export const AUTHOR_URL = "https://github.com/WilkPrintes";
 export const PORT_AUTHOR_URL = "https://github.com/FelipePrado0";
-export const KOFI_URL = "https://ko-fi.com/S7O428PBCC";
 
 /** Release the compatibility list and the guides were checked against */
 export const NOTES_VERSION = "2.3.0";

@@ -1,6 +1,6 @@
 # God of War III para PC · landing page
 
-Página de download do [gow3_pc](https://github.com/FelipePrado0/gow3_pc), o port nativo de God of War III Remastered (PS4) para Windows e Linux.
+Página de download do [gow3_pc](https://github.com/FelipePrado0/gow3_pc), o port para PC de God of War III Remastered (PS4), para Windows e Linux.
 
 O objetivo da página é um só: o jogador baixar a versão mais recente com o menor esforço. Abaixo do download ficam desempenho, recursos, compatibilidade de GPU e créditos, e uma página de tutoriais para os problemas mais comuns.
 

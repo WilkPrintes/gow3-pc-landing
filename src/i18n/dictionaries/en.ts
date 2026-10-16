@@ -5,7 +5,7 @@ const en: Dictionary = {
     title: "God of War III Remastered for PC",
     titleTemplate: "%s · God of War III for PC",
     description:
-      "Native port of God of War III Remastered (PS4) for Windows and Linux. Get the latest release, running at 120 FPS by default and up to 240.",
+      "PC port of God of War III Remastered (PS4) for Windows and Linux. Get the latest release, running at 120 FPS by default and up to 240.",
     tutorialsTitle: "Guides",
     tutorialsDescription: "Fixes for the most common problems with the God of War III PC port, starting from the line in last_run.log.",
   },
@@ -24,10 +24,10 @@ const en: Dictionary = {
 
   header: {
     homeAria: "God of War III for PC, home",
-    tagline: "Native port · PC",
+    tagline: "PC Port",
     sectionsAria: "Sections",
     openMenu: "Open menu",
-    menuSubtitle: "Native port · gow3_pc",
+    menuSubtitle: "PC Port · gow3_pc",
     notesTitle: "Notes for the latest release",
     menuVersion: "Version {version} · release notes",
     repoAria: "Port repository on GitHub, {stars} stars",
@@ -42,7 +42,7 @@ const en: Dictionary = {
   },
 
   hero: {
-    eyebrow: "Native PS4 port · Windows and Linux",
+    eyebrow: "PC Port · Windows and Linux",
     title: "God of War III",
     subtitle: "Remastered on PC",
     lede: "The game's original code running straight on your processor, at 120 FPS by default and up to 240.",
@@ -232,7 +232,7 @@ const en: Dictionary = {
       felipe: "Maintains gow3_pc and adapted the 240 FPS patch",
       cuesta4: "God of War III rendering fixes in shadPS4",
       shadps4: "The video core that translates the GPU and shaders to Vulkan",
-      deadinside28: "bloodborne_pc, the original native port",
+      deadinside28: "bloodborne_pc, the original port",
       supermedo: "The Windows fork this project comes from",
       kvicken: "Resolution, texture and 120 FPS patches",
     },
@@ -249,7 +249,7 @@ const en: Dictionary = {
     disclaimer:
       "Fan project, not affiliated with Sony Interactive Entertainment or Santa Monica Studio. God of War is a trademark of Sony Interactive Entertainment. No game files are distributed.",
     linksAria: "Project links",
-    links: { repo: "Repository", issues: "Issues", kofi: "Ko-fi", pageRepo: "This page's code" },
+    links: { repo: "Repository", issues: "Issues", pageRepo: "This page's code" },
   },
 
   tutorials: {

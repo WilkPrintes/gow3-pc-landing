@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import logo from "@/assets/logo.png";
 import { GithubIcon } from "@/components/icons";
-import { AUTHOR_URL, KOFI_URL, PAGE_REPO_URL, PORT_AUTHOR_URL, PORT_REPO_URL } from "@/content/site";
+import { AUTHOR_URL, PAGE_REPO_URL, PORT_AUTHOR_URL, PORT_REPO_URL } from "@/content/site";
 import { getI18n } from "@/i18n/get-dictionary";
 
 const nameLink = "font-semibold text-foreground underline decoration-line-strong underline-offset-4 hover:decoration-gold-hi";
@@ -61,9 +61,6 @@ export async function SiteFooter() {
           </a>
           <a className="caption py-3 hover:text-foreground sm:py-1" href={`${PORT_REPO_URL}/issues`}>
             {f.links.issues}
-          </a>
-          <a className="caption py-3 hover:text-foreground sm:py-1" href={KOFI_URL}>
-            {f.links.kofi}
           </a>
           <a className="caption col-span-2 inline-flex items-center gap-1.5 py-3 hover:text-foreground sm:col-span-1 sm:py-1" href={PAGE_REPO_URL}>
             <GithubIcon className="size-3.5" />

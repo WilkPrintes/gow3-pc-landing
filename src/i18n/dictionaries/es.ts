@@ -5,7 +5,7 @@ const es: Dictionary = {
     title: "God of War III Remastered para PC",
     titleTemplate: "%s · God of War III para PC",
     description:
-      "Port nativo de God of War III Remastered (PS4) para Windows y Linux. Descarga la versión más reciente, a 120 FPS por defecto y hasta 240.",
+      "Port para PC de God of War III Remastered (PS4), para Windows y Linux. Descarga la versión más reciente, a 120 FPS por defecto y hasta 240.",
     tutorialsTitle: "Guías",
     tutorialsDescription:
       "Soluciones para los problemas más comunes del port de God of War III para PC, a partir de la línea que aparece en last_run.log.",
@@ -25,10 +25,10 @@ const es: Dictionary = {
 
   header: {
     homeAria: "God of War III para PC, inicio",
-    tagline: "Port nativo · PC",
+    tagline: "Port para PC",
     sectionsAria: "Secciones",
     openMenu: "Abrir menú",
-    menuSubtitle: "Port nativo · gow3_pc",
+    menuSubtitle: "Port para PC · gow3_pc",
     notesTitle: "Notas de la versión más reciente",
     menuVersion: "Versión {version} · notas de la versión",
     repoAria: "Repositorio del port en GitHub, {stars} estrellas",
@@ -43,7 +43,7 @@ const es: Dictionary = {
   },
 
   hero: {
-    eyebrow: "Port nativo de PS4 · Windows y Linux",
+    eyebrow: "Port para PC · Windows y Linux",
     title: "God of War III",
     subtitle: "Remastered en PC",
     lede: "El código original del juego ejecutándose directamente en tu procesador, a 120 FPS por defecto y hasta 240.",
@@ -238,7 +238,7 @@ const es: Dictionary = {
       felipe: "Mantiene gow3_pc y adaptó el parche de 240 FPS",
       cuesta4: "Correcciones de renderizado de God of War III en shadPS4",
       shadps4: "El núcleo de vídeo que traduce la GPU y los shaders a Vulkan",
-      deadinside28: "bloodborne_pc, el port nativo original",
+      deadinside28: "bloodborne_pc, el port original",
       supermedo: "El fork para Windows del que viene el proyecto",
       kvicken: "Parches de resolución, texturas y 120 FPS",
     },
@@ -255,7 +255,7 @@ const es: Dictionary = {
     disclaimer:
       "Proyecto de fans, sin afiliación con Sony Interactive Entertainment ni Santa Monica Studio. God of War es una marca registrada de Sony Interactive Entertainment. No se distribuye ningún archivo del juego.",
     linksAria: "Enlaces del proyecto",
-    links: { repo: "Repositorio", issues: "Issues", kofi: "Ko-fi", pageRepo: "Código de esta página" },
+    links: { repo: "Repositorio", issues: "Issues", pageRepo: "Código de esta página" },
   },
 
   tutorials: {
