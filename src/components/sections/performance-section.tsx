@@ -1,14 +1,15 @@
 import { Section } from "@/components/section";
 import { Shot } from "@/components/shot";
-import { benchmark } from "@/content/site";
+import { VideoEmbed } from "@/components/video-embed";
+import { PERFORMANCE_VIDEO_ID, benchmark } from "@/content/site";
 import { getI18n } from "@/i18n/get-dictionary";
 import tartarus from "@/assets/shots/tartarus.webp";
-import titan from "@/assets/shots/titan.webp";
 import cestus from "@/assets/shots/cestus.webp";
 
 export async function PerformanceSection({ index, total }: { index: number; total: number }) {
   const { t } = await getI18n();
   const p = t.performance;
+  const capture = t.common.capture;
 
   const stats = [
     { value: "120", unit: ".", text: p.stats[0] },
@@ -57,20 +58,20 @@ export async function PerformanceSection({ index, total }: { index: number; tota
         </div>
 
         <div className="grid grid-cols-[minmax(0,1fr)] gap-4 md:grid-cols-2" data-gsap="reveal">
+          {/* The port video lives on YouTube (youtube-nocookie.com), never on this host */}
           <Shot.Root className="md:col-span-2">
-            <Shot.Image src={tartarus} alt={p.shots.tartarus.alt} sizes="(min-width: 1360px) 1248px, 100vw" />
-            <Shot.Hud>118 FPS · 8,5 ms · Native</Shot.Hud>
-            <Shot.Caption meta={p.shots.tartarus.meta}>{p.shots.tartarus.caption}</Shot.Caption>
+            <VideoEmbed id={PERFORMANCE_VIDEO_ID} title={p.video.title} pending={p.video.pending} />
+            <Shot.Caption meta="YouTube">{capture}</Shot.Caption>
           </Shot.Root>
           <Shot.Root>
-            <Shot.Image src={titan} alt={p.shots.titan.alt} />
-            <Shot.Hud>120 FPS · 8,3 ms</Shot.Hud>
-            <Shot.Caption meta={p.shots.titan.meta}>{p.shots.titan.caption}</Shot.Caption>
+            <Shot.Image src={tartarus} alt={p.shots.tartarus.alt} />
+            <Shot.Hud>118 FPS · 8,5 ms · Native</Shot.Hud>
+            <Shot.Caption meta={p.shots.tartarus.caption}>{capture}</Shot.Caption>
           </Shot.Root>
           <Shot.Root>
             <Shot.Image src={cestus} alt={p.shots.cestus.alt} />
             <Shot.Hud>120 FPS · 8,3 ms</Shot.Hud>
-            <Shot.Caption meta={p.shots.cestus.meta}>{p.shots.cestus.caption}</Shot.Caption>
+            <Shot.Caption meta={p.shots.cestus.caption}>{capture}</Shot.Caption>
           </Shot.Root>
         </div>
 

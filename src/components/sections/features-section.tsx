@@ -4,7 +4,6 @@ import { Section } from "@/components/section";
 import { Shot } from "@/components/shot";
 import { getI18n } from "@/i18n/get-dictionary";
 import portMenuShot from "@/assets/shots/port-menu.webp";
-import cutscene from "@/assets/shots/cutscene.webp";
 import launcher from "@/assets/shots/launcher.png";
 
 function Kbd({ children }: { children: string }) {
@@ -25,7 +24,7 @@ export async function FeaturesSection({ index, total }: { index: number; total: 
         <GlyphShowcase.Provider>
           <FeatureBlock.Root>
             <FeatureBlock.Media>
-              <GlyphShowcase.Shot copy={f.controller.shots} />
+              <GlyphShowcase.Shot copy={f.controller.shots} caption={t.common.capture} />
             </FeatureBlock.Media>
             <FeatureBlock.Content>
               <FeatureBlock.Eyebrow>{f.controller.eyebrow}</FeatureBlock.Eyebrow>
@@ -42,6 +41,7 @@ export async function FeaturesSection({ index, total }: { index: number; total: 
           <FeatureBlock.Media>
             <Shot.Root>
               <Shot.Image src={portMenuShot} alt={f.menu.shotAlt} />
+              <Shot.Caption meta={f.menu.eyebrow}>{t.common.capture}</Shot.Caption>
             </Shot.Root>
           </FeatureBlock.Media>
           <FeatureBlock.Content>
@@ -62,19 +62,6 @@ export async function FeaturesSection({ index, total }: { index: number; total: 
           </FeatureBlock.Content>
         </FeatureBlock.Root>
 
-        <FeatureBlock.Root>
-          <FeatureBlock.Media>
-            <Shot.Root>
-              <Shot.Image src={cutscene} alt={f.cutscenes.shotAlt} />
-            </Shot.Root>
-          </FeatureBlock.Media>
-          <FeatureBlock.Content>
-            <FeatureBlock.Eyebrow>{f.cutscenes.eyebrow}</FeatureBlock.Eyebrow>
-            <FeatureBlock.Title>{f.cutscenes.title}</FeatureBlock.Title>
-            <FeatureBlock.Text>{f.cutscenes.text}</FeatureBlock.Text>
-          </FeatureBlock.Content>
-        </FeatureBlock.Root>
-
         <div className="grid grid-cols-[minmax(0,1fr)] gap-4 border-t pt-14 sm:grid-cols-2 lg:grid-cols-4" data-gsap="reveal">
           {f.more.map((item) => (
             <div key={item.title} className="flex flex-col gap-2.5 rounded-md border bg-card p-6">
@@ -86,7 +73,7 @@ export async function FeaturesSection({ index, total }: { index: number; total: 
 
         <Shot.Root className="mt-4">
           <Shot.Image src={launcher} alt={f.launcher.alt} contain sizes="(min-width: 1360px) 1248px, 100vw" />
-          <Shot.Caption meta={f.launcher.meta}>{f.launcher.caption}</Shot.Caption>
+          <Shot.Caption meta={f.launcher.caption}>{t.common.capture}</Shot.Caption>
         </Shot.Root>
       </Section.Body>
     </Section.Root>

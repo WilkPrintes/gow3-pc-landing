@@ -2,13 +2,13 @@ import type { Dictionary } from "./pt";
 
 const es: Dictionary = {
   meta: {
-    title: "God of War III Remastered para PC",
-    titleTemplate: "%s · God of War III para PC",
-    description:
-      "Port para PC de God of War III Remastered (PS4), para Windows y Linux. Descarga la versión más reciente, a 120 FPS por defecto y hasta 240.",
+    title: "gow3_pc: port nativo no oficial para PC",
+    titleTemplate: "%s · gow3_pc",
+    description: "Port nativo y no oficial de un juego de PS4 para Windows y Linux. Funciona a partir del dump de tu propia copia (CUSA01623 o CUSA01715). Código abierto, GPL-2.0.",
     tutorialsTitle: "Guías",
-    tutorialsDescription:
-      "Soluciones para los problemas más comunes del port de God of War III para PC, a partir de la línea que aparece en last_run.log.",
+    tutorialsDescription: "Soluciones para los problemas más comunes de gow3_pc, a partir de la línea que aparece en last_run.log.",
+    legalTitle: "Aviso legal",
+    legalDescription: "Aviso legal de gow3_pc: proyecto no oficial, sin archivos del juego, con un canal para solicitudes de retirada.",
   },
 
   common: {
@@ -21,14 +21,15 @@ const es: Dictionary = {
     copied: "Copiado",
     copyFailed: "Selecciona y copia",
     releaseNotes: "Notas de la versión",
+    capture: "Captura del port en funcionamiento",
   },
 
   header: {
-    homeAria: "God of War III para PC, inicio",
-    tagline: "Port para PC",
+    homeAria: "gow3_pc, inicio",
+    tagline: "Port no oficial",
     sectionsAria: "Secciones",
     openMenu: "Abrir menú",
-    menuSubtitle: "Port para PC · gow3_pc",
+    menuSubtitle: "Port nativo no oficial para PC",
     notesTitle: "Notas de la versión más reciente",
     menuVersion: "Versión {version} · notas de la versión",
     repoAria: "Repositorio del port en GitHub, {stars} estrellas",
@@ -43,14 +44,12 @@ const es: Dictionary = {
   },
 
   hero: {
-    eyebrow: "Port para PC · Windows y Linux",
-    title: "God of War III",
-    subtitle: "Remastered en PC",
-    lede: "El código original del juego ejecutándose directamente en tu procesador, a 120 FPS por defecto y hasta 240.",
-    requires: "Requiere el dump de tu propia copia de PS4 (CUSA01623 o CUSA01715), una GPU con Vulkan 1.3 y una CPU con AVX.",
+    eyebrow: "Port nativo no oficial · Windows y Linux",
+    title: "gow3_pc",
+    subtitle: "Port nativo y no oficial para PC de un clásico de acción de PS4. Tú pones tu copia, nosotros el ejecutable y el launcher.",
+    lede: "Ejecuta el juego a partir del dump de tu propia copia, directamente en la CPU y sin emulación. 120 FPS por defecto, hasta 240.",
+    notice: "Proyecto no oficial, hecho por fans. No contiene archivos del juego. Necesitas tu propia copia.",
     downloads: "descargas",
-    videoAria:
-      "Gameplay de God of War III en el port a 120 FPS, grabado en una RTX 3060: el Tártaro, la cámara giratoria de Dédalo, las Espadas en combate y un QTE con icono de Nintendo",
     newsLabel: "Novedades",
     newsAria: "Novedades de las últimas versiones",
     news: [
@@ -78,6 +77,7 @@ const es: Dictionary = {
     lead: "Elige tu plataforma. El launcher también se actualiza solo en Avanzado → Buscar actualizaciones, conservando partidas y ajustes.",
     recommended: "Recomendado",
     experimental: "Experimental",
+    requires: "Requiere un dump de tu copia legítima, hecho en tu propia consola (CUSA01623 o CUSA01715, versión 01.00 o 01.02). También requiere una GPU con Vulkan 1.3 y una CPU con AVX.",
     labels: { file: "Archivo", system: "Sistema", gpu: "GPU", cpu: "Procesador", tested: "Probado en", note: "Atención" },
     windows: {
       system: "Windows 10 (1903+) u 11, 64 bits",
@@ -103,9 +103,10 @@ const es: Dictionary = {
   performance: {
     word: "Rendimiento",
     tape: "120 FPS por defecto. 240 si quieres.",
-    lead: "El código del juego se ejecuta directamente en la CPU, sin emulación. Los números de abajo vienen del overlay del propio port, en resolución nativa.",
+    lead: "El juego se ejecuta directamente en la CPU, a partir de tu dump, sin emulación. Los números de abajo vienen del overlay del propio port, en resolución nativa.",
     recordedOn: "Grabado en",
     rig: "1080p nativo · motor a 120 FPS · NVIDIA App",
+    video: { title: "Vídeo del port en funcionamiento", pending: "El nuevo vídeo llegará aquí pronto." },
     stats: [
       "FPS en el motor, activado por defecto",
       "FPS con el parche opcional",
@@ -121,9 +122,8 @@ const es: Dictionary = {
       note: "RX 6700 XT, Ryzen 5 5600X y 32 GB. Es un resultado de referencia, no una garantía para otras máquinas. En portátiles con NVIDIA, poner Stream buffer memory en System RAM puede dar más FPS.",
     },
     shots: {
-      tartarus: { alt: "Kratos llegando al Tártaro", caption: "Tártaro", meta: "overlay del port" },
-      titan: { alt: "Kratos sobre una plataforma frente a un titán, con lava debajo", caption: "Gameplay", meta: "Native" },
-      cestus: { alt: "Kratos con el Cesto de Nemea entre pilares de hielo", caption: "Gameplay", meta: "Native" },
+      tartarus: { alt: "Kratos llegando al Tártaro", caption: "Tártaro" },
+      cestus: { alt: "Kratos con el Cesto de Nemea entre pilares de hielo", caption: "Gameplay" },
     },
   },
 
@@ -139,17 +139,14 @@ const es: Dictionary = {
         original: {
           alt: "Menú de mejora de las Espadas del Exilio con los botones triángulo, cuadrado y círculo de PlayStation",
           caption: "Menú de mejora · iconos originales",
-          meta: "△ Alma · □ Ver · ○ Volver",
         },
         xbox: {
           alt: "Menú de mejora de las Espadas del Exilio con los botones Y, X y B al estilo Xbox",
           caption: "Menú de mejora · estilo Xbox",
-          meta: "Y Alma · X Ver · B Volver",
         },
         nintendo: {
           alt: "Menú de mejora de las Espadas de Atenea con los botones X, Y y A al estilo Nintendo",
           caption: "Menú de mejora · estilo Nintendo",
-          meta: "X Alma · Y Ver · A Volver",
         },
       },
       switcherAria: "Estilo de los iconos",
@@ -174,12 +171,6 @@ const es: Dictionary = {
         ["FPS, tiempo de fotograma, CPU, RAM y VRAM", "overlay"],
       ],
     },
-    cutscenes: {
-      eyebrow: "Cinemáticas y audio",
-      title: "Vídeos, voces y subtítulos funcionando",
-      text: "Cinemáticas en H.264, música, voces y efectos en ATRAC9 y MP3. Los subtítulos y menús siguen el idioma de tu dump.",
-      shotAlt: "Cinemática con Kratos y subtítulos en portugués",
-    },
     more: [
       { title: "Launcher", text: "Cinco páginas: Inicio, Gráficos, Rendimiento, Juego y Avanzado." },
       { title: "Partidas", text: "Lista como en PS4, autoguardado, copia de seguridad antes de cada sesión e importación de shadPS4." },
@@ -189,7 +180,6 @@ const es: Dictionary = {
     launcher: {
       alt: "Página Inicio del launcher, con ajustes rápidos de modo de pantalla, resolución, límite de fotogramas y fotogramas del motor, y el botón Jugar",
       caption: "Launcher · página Inicio",
-      meta: "Nativa (1080p) · motor a 120 FPS · 2 parches",
     },
   },
 
@@ -236,7 +226,7 @@ const es: Dictionary = {
     tape: "Hecho por la comunidad, código abierto bajo GPL-2.0",
     items: {
       felipe: "Mantiene gow3_pc y adaptó el parche de 240 FPS",
-      cuesta4: "Correcciones de renderizado de God of War III en shadPS4",
+      cuesta4: "Correcciones de renderizado del juego en shadPS4",
       shadps4: "El núcleo de vídeo que traduce la GPU y los shaders a Vulkan",
       deadinside28: "bloodborne_pc, el port original",
       supermedo: "El fork para Windows del que viene el proyecto",
@@ -252,10 +242,23 @@ const es: Dictionary = {
     pageTitle: "Esta página",
     pageBefore: "Página hecha por",
     pageMiddle: ". El código está abierto en",
-    disclaimer:
-      "Proyecto de fans, sin afiliación con Sony Interactive Entertainment ni Santa Monica Studio. God of War es una marca registrada de Sony Interactive Entertainment. No se distribuye ningún archivo del juego.",
+    notice: "gow3_pc es un proyecto independiente, no oficial y sin ánimo de lucro.",
+    legal: "Aviso legal",
     linksAria: "Enlaces del proyecto",
     links: { repo: "Repositorio", issues: "Issues", pageRepo: "Código de esta página" },
+  },
+
+  legal: {
+    title: "Aviso legal",
+    paragraphs: [
+      "gow3_pc es un proyecto independiente, no oficial y sin ánimo de lucro. No tiene afiliación, patrocinio ni respaldo de Sony Interactive Entertainment, de Santa Monica Studio ni de ninguna empresa vinculada a ellos. Todas las marcas citadas pertenecen a sus propietarios.",
+      "Este proyecto no distribuye código, archivos, assets, claves ni firmware del juego o de la consola. Para usarlo, necesitas un dump de tu propia copia, obtenido legalmente en tu propia consola. No damos soporte a la piratería ni ayudamos a conseguir copias del juego.",
+      "Las imágenes y vídeos de esta página son capturas de pantalla del port en funcionamiento, usadas solo con fines de demostración.",
+    ],
+    contactBefore: "Solicitudes de retirada o contacto de titulares de derechos: ",
+    contactAfter: ". Respondemos y retiramos el contenido con prontitud.",
+    emailPending: "correo próximamente",
+    back: "Volver al inicio",
   },
 
   tutorials: {
@@ -396,7 +399,7 @@ const es: Dictionary = {
         tone: "ok",
         badge: "Funciona",
         intro:
-          "Solo partidas de shadPS4 para God of War III Remastered. Las de RPCS3 son del juego de PS3 y no funcionan. Usa el mismo title ID en ambos lados.",
+          "Solo partidas de shadPS4 de este juego (CUSA01623 o CUSA01715). Las de RPCS3 son del juego de PS3 y no funcionan. Usa el mismo title ID en ambos lados.",
         log: {
           label: "origen → destino · ejemplo con CUSA01623",
           lines: [

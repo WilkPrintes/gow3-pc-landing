@@ -1,18 +1,18 @@
-# God of War III para PC · landing page
+# gow3_pc · landing page
 
-Página de download do [gow3_pc](https://github.com/FelipePrado0/gow3_pc), o port para PC de God of War III Remastered (PS4), para Windows e Linux.
+Página de download do [gow3_pc](https://github.com/FelipePrado0/gow3_pc), port nativo e não oficial de um jogo de PS4 para Windows e Linux (CUSA01623 ou CUSA01715).
 
 O objetivo da página é um só: o jogador baixar a versão mais recente com o menor esforço. Abaixo do download ficam desempenho, recursos, compatibilidade de GPU e créditos, e uma página de tutoriais para os problemas mais comuns.
 
-> Projeto de fãs, sem afiliação com a Sony Interactive Entertainment ou a Santa Monica Studio. God of War é marca registrada da Sony Interactive Entertainment. Nenhum arquivo do jogo é distribuído por esta página nem pelo port.
+> Projeto não oficial, feito por fãs, sem afiliação com a Sony Interactive Entertainment ou o Santa Monica Studio. Nenhum arquivo do jogo é distribuído por esta página nem pelo port. O aviso completo fica em `/pt/legal`, `/en/legal` e `/es/legal`.
 
 ## Stack
 
 - [Next.js 16](https://nextjs.org) (App Router, Cache Components, Turbopack)
 - [Tailwind CSS 4](https://tailwindcss.com) e componentes [shadcn/ui](https://ui.shadcn.com) sobre Base UI
 - [GSAP](https://gsap.com) com ScrollTrigger e SplitText para as animações
-- Fontes via `next/font`, na mesma divisão do launcher do port (uma face "God of War" nos títulos e uma sem serifa no texto):
-  - **Cinzel Decorative** (black) no nome do jogo e nas palavras das seções, e **Cinzel** em botões, rótulos e títulos menores. As duas são SIL OFL e substituem a `gowfont.ttf` do launcher, uma fonte "Demo" de autor não identificado, marcada como incorporação restrita, que não pode ser servida na web.
+- Fontes via `next/font`:
+  - **Cinzel** (SIL OFL, 700 a 900) nos títulos e botões principais. Nenhuma fonte da franquia, e a marca da página é própria (`src/components/brand-mark.tsx`), sem o Ω.
   - **Archivo** no texto corrido e **JetBrains Mono** nos dados técnicos.
 
 ## Dados sempre atualizados
@@ -38,7 +38,7 @@ Abra http://localhost:3000. Outros comandos: `npm run build`, `npm run start` e 
 
 ## Idiomas
 
-O site existe em português, inglês e espanhol, em `/pt`, `/en` e `/es`. As seis páginas (landing e guias em cada idioma) são pré-renderizadas no build.
+O site existe em português, inglês e espanhol, em `/pt`, `/en` e `/es`. As nove páginas (landing, guias e aviso legal em cada idioma) são pré-renderizadas no build.
 
 - `src/proxy.ts` manda quem acessa `/` para o idioma salvo pelo seletor (cookie `NEXT_LOCALE`) ou, sem ele, para o idioma do navegador (`Accept-Language`). Qualquer outro idioma cai em português.
 - `src/i18n/dictionaries/pt.ts` é a fonte; `en.ts` e `es.ts` são tipados com o mesmo formato, então uma chave faltando quebra o `tsc`.
@@ -85,13 +85,13 @@ src/
     layout.tsx            <html lang>, fontes, metadados e hreflang por idioma
     page.tsx              landing: hero, download, desempenho, recursos, compatibilidade, créditos
     tutorials/page.tsx    guias a partir das linhas do last_run.log
+    legal/page.tsx        aviso legal completo e contato para pedidos de remoção
   components/             componentes compostos e partes interativas (cliente)
   components/sections/    seções da landing montadas com os componentes compostos
   content/site.ts         dados que não mudam com o idioma (links, amostras de FPS, ícones)
   i18n/                   idiomas, dicionários e getI18n()
   lib/release.ts          dados da release mais recente, com cache de 1 hora
   proxy.ts                redireciona / para o idioma certo
-public/media/             vídeo do topo (WebM AV1 e MP4 H.264) e imagem de capa
 src/assets/shots/         capturas do port
 ```
 
@@ -111,10 +111,8 @@ Os componentes de servidor só marcam elementos com `data-gsap="…"`. A página
 | `float` | botão fixo de download aparece depois do topo |
 | `magnetic` | o botão principal acompanha o ponteiro |
 
-## Vídeo do topo
-
-Loop de 18 s em 1080p a 60 FPS, montado só com trechos em que o overlay do port marcava 120 FPS, a partir de gravações do NVIDIA App numa GeForce RTX 3060. Dois arquivos: `hero.webm` (AV1, 5,8 MB) e `hero.mp4` (H.264, 7,9 MB) como alternativa.
-
 ## Mídia
 
-As capturas e o vídeo foram gravados por jogadores rodando o port com o próprio dump do jogo. As imagens do jogo pertencem aos seus detentores e estão aqui apenas para mostrar o port funcionando.
+Nenhum vídeo é hospedado aqui. O vídeo do port fica no YouTube e entra na seção Desempenho pelo `youtube-nocookie.com`: basta preencher `PERFORMANCE_VIDEO_ID` em `src/content/site.ts`. Sem o ID, a seção mostra um quadro reservado.
+
+As capturas (launcher, menu do port, ícones de controle e duas cenas de gameplay) foram feitas rodando o port com o próprio dump. Todas levam a legenda "Captura do port em funcionamento". O e-mail para pedidos de remoção fica em `LEGAL_EMAIL`, no mesmo arquivo.

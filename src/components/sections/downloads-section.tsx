@@ -25,6 +25,9 @@ export async function DownloadsSection({ release, index, total }: { release: Rel
         <Section.Lead>{d.lead}</Section.Lead>
       </Section.Header>
       <Section.Body className="flex flex-col gap-10">
+        <p className="-mb-4 max-w-[860px] rounded-md border border-l-2 border-line-strong border-l-gold bg-card px-4 py-3.5 text-[15px] leading-relaxed text-soft">
+          {d.requires}
+        </p>
         <div className="grid grid-cols-[minmax(0,1fr)] gap-4 lg:grid-cols-2" data-gsap="reveal">
           {windows && (
             <PlatformCard.Root featured>

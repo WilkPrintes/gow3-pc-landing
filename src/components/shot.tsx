@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
  *   <Shot.Root>
  *     <Shot.Image src={…} alt="…" />
  *     <Shot.Hud>120 FPS · 8,3 ms</Shot.Hud>
- *     <Shot.Caption meta="Native">Gameplay</Shot.Caption>
+ *     <Shot.Caption meta="Caverna do Tártaro">Captura do port em funcionamento</Shot.Caption>
  *   </Shot.Root>
  */
 

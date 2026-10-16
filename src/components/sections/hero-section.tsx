@@ -13,7 +13,7 @@ export async function HeroSection({ release }: { release: ReleaseData }) {
 
   return (
     <section id="top">
-      <Hero.Root videoLabel={t.hero.videoAria}>
+      <Hero.Root>
         <Hero.Copy>
           <Hero.Eyebrow>{t.hero.eyebrow}</Hero.Eyebrow>
           <Hero.Title subtitle={t.hero.subtitle}>{t.hero.title}</Hero.Title>
@@ -31,6 +31,7 @@ export async function HeroSection({ release }: { release: ReleaseData }) {
               </a>
             )}
           </Hero.Actions>
+          <Hero.Note>{t.hero.notice}</Hero.Note>
           <Hero.Meta>
             <span>
               v<b className="font-medium text-foreground">{release.version}</b>
@@ -46,7 +47,6 @@ export async function HeroSection({ release }: { release: ReleaseData }) {
               </span>
             )}
           </Hero.Meta>
-          <Hero.Note>{t.hero.requires}</Hero.Note>
         </Hero.Copy>
         <Hero.Aside>
           <Telemetry />

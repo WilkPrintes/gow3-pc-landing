@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Cinzel, Cinzel_Decorative, JetBrains_Mono } from "next/font/google";
+import { Archivo, Cinzel, JetBrains_Mono } from "next/font/google";
 import { htmlLang, locales } from "@/i18n/config";
 import { getI18n } from "@/i18n/get-dictionary";
 import "../globals.css";
@@ -15,19 +15,11 @@ const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
 });
 
-// The port launcher sets every title in GodOfWar.ttf, a demo font marked "restricted
-// embedding" that cannot be served on the web. These two SIL OFL faces stand in for it:
-// Cinzel Decorative (black, with the flared N, H and W) for the game name and section
-// words, Cinzel for buttons, labels and smaller titles where the swashes would hurt reading.
+// Titles and main buttons: Cinzel (SIL OFL), Roman inscription capitals at 700 to 900.
+// No franchise font, and no Ω next to it: the page keeps its own mark (components/brand-mark.tsx).
 const cinzel = Cinzel({
   variable: "--font-cinzel",
   subsets: ["latin"],
-});
-
-const cinzelDecorative = Cinzel_Decorative({
-  variable: "--font-cinzel-decorative",
-  subsets: ["latin"],
-  weight: ["700", "900"],
 });
 
 /** Prerender every supported language */
@@ -55,7 +47,7 @@ export const viewport: Viewport = {
 export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   const { tag } = await getI18n();
   return (
-    <html lang={tag} className={`${archivo.variable} ${jetbrains.variable} ${cinzel.variable} ${cinzelDecorative.variable} dark`}>
+    <html lang={tag} className={`${archivo.variable} ${jetbrains.variable} ${cinzel.variable} dark`}>
       <body className="min-h-dvh">{children}</body>
     </html>
   );

@@ -152,7 +152,7 @@ const zoomImage = {
 };
 
 /** The same in-game menu captured with each icon style; all three stay mounted so switching is instant. */
-export function GlyphShowcaseShot({ copy }: { copy: Record<GlyphStyle, ShotCopy> }) {
+export function GlyphShowcaseShot({ copy, caption }: { copy: Record<GlyphStyle, ShotCopy>; caption: string }) {
   const { style } = useStyle();
   return (
     <Shot.Root>
@@ -185,7 +185,7 @@ export function GlyphShowcaseShot({ copy }: { copy: Record<GlyphStyle, ShotCopy>
         ))}
       </div>
       <Shot.Hud>120 FPS · 8,3 ms · Native</Shot.Hud>
-      <Shot.Caption meta={copy[style].meta}>{copy[style].caption}</Shot.Caption>
+      <Shot.Caption meta={copy[style].caption}>{caption}</Shot.Caption>
     </Shot.Root>
   );
 }

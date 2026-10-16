@@ -73,11 +73,10 @@
   --color-warn: var(--warn);
   --color-bad: var(--bad);
 
-  /* Same split as the port launcher: a "God of War" face for titles, a sans for text */
+  /* Cinzel for titles and main buttons, a sans for text */
   --font-sans: var(--font-archivo);
   --font-heading: var(--font-cinzel);
   --font-display: var(--font-cinzel);
-  --font-wordmark: var(--font-cinzel-decorative);
   --font-mono: var(--font-jetbrains);
 
   --radius-sm: calc(var(--radius) * 0.6);
@@ -86,7 +85,7 @@
   --radius-xl: calc(var(--radius) * 1.4);
 }
 
-/* Titles: Cinzel capitals, standing in for the launcher's GodOfWar face */
+/* Titles: Cinzel capitals */
 @utility display-x {
   font-family: var(--font-cinzel);
   font-weight: 800;
@@ -96,9 +95,9 @@
   text-wrap: balance;
 }
 
-/* The game name and the big section words: Cinzel Decorative black */
+/* The H1 and the big section words: Cinzel black */
 @utility display-epic {
-  font-family: var(--font-cinzel-decorative);
+  font-family: var(--font-cinzel);
   font-weight: 900;
   letter-spacing: 0.01em;
   text-transform: uppercase;

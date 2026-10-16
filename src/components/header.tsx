@@ -1,7 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import logo from "@/assets/logo.png";
+import { BrandMark } from "@/components/brand-mark";
 import { HeaderFrame } from "@/components/header-frame";
 
 /**
@@ -27,9 +26,9 @@ function Root({ solid, children }: { solid?: boolean; children: ReactNode }) {
 function Brand({ href, label, tagline }: { href: string; label: string; tagline: string }) {
   return (
     <Link href={href} className="group flex shrink-0 items-center gap-3" aria-label={label}>
-      <Image src={logo} alt="" width={38} height={38} className="rounded-lg ring-1 ring-white/10" priority />
+      <BrandMark className="size-[38px]" />
       <span className="flex flex-col gap-1 leading-none">
-        <span className="font-wordmark text-base font-black tracking-[0.03em] uppercase">God of War III</span>
+        <span className="font-mono text-[17px] font-bold tracking-[-0.01em]">gow3_pc</span>
         <span className="font-mono text-[11px] tracking-[0.08em] text-steel uppercase group-hover:text-gold-hi">{tagline}</span>
       </span>
     </Link>
