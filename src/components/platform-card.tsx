@@ -63,7 +63,8 @@ function Specs({ rows }: { rows: [string, ReactNode][] }) {
 }
 
 function Actions({ children }: { children: ReactNode }) {
-  return <div className="flex flex-wrap gap-3">{children}</div>;
+  // mt-auto pins the buttons and the checksum to the bottom, so side-by-side cards line up
+  return <div className="mt-auto flex flex-wrap gap-3">{children}</div>;
 }
 
 function Checksum({ value, labels }: { value: string | null; labels: { copy: string; copied: string; failed: string } }) {
