@@ -300,7 +300,7 @@ const es: Dictionary = {
             fix: "En investigación (#175, #213). Prueba con un dump 01.00 si lo tienes.",
           },
           { line: "0xC0000005 in ucrtbase!strlen", cause: "Cierre justo después de que arrancan los hilos de audio", fix: "En investigación (#46). Adjunta el log a la issue." },
-          { line: "code=0xa0020001", cause: "El dump del juego probablemente está incompleto", fix: "Vuelve a hacer el dump desde tu PS4. El launcher avisa de esto desde la 2.3.0." },
+          { line: "code=0xa0020001", cause: "El dump del juego probablemente está incompleto", fix: "Vuelve a hacer el dump de tu propia copia, en tu propia consola. El launcher avisa de esto desde la 2.3.0." },
         ],
         steps: [
           { title: "Abre el log y ve al final", text: "Busca la primera línea que empieza con Fault:, STOP: o Runtime: cannot. Lo que viene después es consecuencia." },

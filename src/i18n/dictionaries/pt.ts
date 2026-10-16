@@ -301,7 +301,7 @@ const pt = {
             fix: "Em investigação (#175, #213). Teste com o dump 01.00 se tiver.",
           },
           { line: "0xC0000005 in ucrtbase!strlen", cause: "Crash logo após as threads de áudio", fix: "Em investigação (#46). Anexe o log na issue." },
-          { line: "code=0xa0020001", cause: "Dump do jogo provavelmente incompleto", fix: "Refaça o dump do seu PS4. O launcher avisa isso desde a 2.3.0." },
+          { line: "code=0xa0020001", cause: "Dump do jogo provavelmente incompleto", fix: "Refaça o dump da sua própria cópia, no seu console. O launcher avisa isso desde a 2.3.0." },
         ],
         steps: [
           { title: "Abra o log e vá até o fim", text: "Procure a primeira linha que começa com Fault:, STOP: ou Runtime: cannot. O que vem depois dela é consequência." },

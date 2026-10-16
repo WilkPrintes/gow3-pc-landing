@@ -295,7 +295,7 @@ const en: Dictionary = {
             fix: "Under investigation (#175, #213). Try a 01.00 dump if you have one.",
           },
           { line: "0xC0000005 in ucrtbase!strlen", cause: "Crash right after the audio threads start", fix: "Under investigation (#46). Attach the log to the issue." },
-          { line: "code=0xa0020001", cause: "The game dump is probably incomplete", fix: "Dump the game from your PS4 again. The launcher warns about this since 2.3.0." },
+          { line: "code=0xa0020001", cause: "The game dump is probably incomplete", fix: "Dump your own copy again, on your own console. The launcher warns about this since 2.3.0." },
         ],
         steps: [
           { title: "Open the log and go to the end", text: "Look for the first line starting with Fault:, STOP: or Runtime: cannot. Whatever follows it is a consequence." },
